@@ -1,4 +1,3 @@
-
 fun is_older(first : int*int*int, second : int*int*int) =
   if #1 (first) < #1 (second) then true
   else if #1(first) > #1(second) then false
