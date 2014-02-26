@@ -1,0 +1,38 @@
+<?xml version="1.0" ?>
+<!--Bookstore with no DTD-->
+
+<Bookstore>
+   <Book ISBN="ISBN-0-13-713526-2" Price="85" Edition="3rd">
+      <Title>A First Course in Database Systems</Title>
+      <Authors>
+         <Author>
+            <First_Name>Jeffrey</First_Name>
+            <Last_Name>Ullman</Last_Name>
+         </Author>
+         <Author>
+            <First_Name>Jennifer</First_Name>
+            <Last_Name>Widom</Last_Name>
+         </Author>
+      </Authors>
+   </Book>
+   <Book ISBN="ISBN-0-13-815504-6" Price="100">
+      <Remark>
+      Buy this book bundled with "A First Course" - a great deal!
+      </Remark>
+      <Title>Database Systems: The Complete Book</Title>
+      <Authors>
+         <Author>
+            <First_Name>Hector</First_Name>
+            <Last_Name>Garcia-Molina</Last_Name>
+         </Author>
+         <Author>
+            <First_Name>Jeffrey</First_Name>
+            <Last_Name>Ullman</Last_Name>
+         </Author>
+         <Author>
+            <First_Name>Jennifer</First_Name>
+            <Last_Name>Widom</Last_Name>
+         </Author>
+      </Authors>
+   </Book>
+</Bookstore>

@@ -1,0 +1,47 @@
+<?xml version="1.0" ?>
+<!-- Bookstore using ID/IDREFs      -->
+<!-- Try changes:                   -->
+<!--   Ident JU to HG               -->
+<!--   BookRef to HG                -->
+<!--   Add second BookRef in Remark -->
+
+<!DOCTYPE Bookstore [
+   <!ELEMENT Bookstore (Book*, Author*)>
+   <!ELEMENT Book (Title, Remark?)>
+   <!ATTLIST Book ISBN ID #REQUIRED
+                  Price CDATA #REQUIRED
+                  Authors IDREFS #REQUIRED>
+   <!ELEMENT Title (#PCDATA)>
+   <!ELEMENT Remark (#PCDATA | BookRef)*>
+   <!ELEMENT BookRef EMPTY>
+   <!ATTLIST BookRef book IDREF #REQUIRED>
+   <!ELEMENT Author (First_Name, Last_Name)>
+   <!ATTLIST Author Ident ID #REQUIRED>
+   <!ELEMENT First_Name (#PCDATA)>
+   <!ELEMENT Last_Name (#PCDATA)>
+]>
+
+<Bookstore>
+   <Book ISBN="ISBN-0-13-713526-2" Price="100" Authors="JU JW">
+      <Title>A First Course in Database Systems</Title>
+   </Book>
+   <Book ISBN="ISBN-0-13-815504-6" Price="85" Authors="HG JU JW">
+      <Title>Database Systems: The Complete Book</Title>
+      <Remark>
+         Amazon.com says: Buy this book bundled with
+         <BookRef book="ISBN-0-13-713526-2" /> - a great deal!
+      </Remark>
+    </Book>
+    <Author Ident="HG">
+      <First_Name>Hector</First_Name>
+      <Last_Name>Garcia-Molina</Last_Name>
+   </Author>
+   <Author Ident="JU">
+      <First_Name>Jeffrey</First_Name>
+      <Last_Name>Ullman</Last_Name>
+   </Author>
+   <Author Ident="JW">
+      <First_Name>Jennifer</First_Name>
+      <Last_Name>Widom</Last_Name>
+   </Author>
+</Bookstore>

@@ -1,0 +1,59 @@
+<?xml version="1.0" ?>
+<!-- Bookstore with DTD                    -->
+<!-- Try changes:                          -->
+<!--   Make Edition required               -->
+<!--   Swap order of First_Name, Last_Name -->
+<!--   Add empty Remark                    -->
+<!--   Add Magazine, omit closing tag      -->
+
+<!DOCTYPE Bookstore [
+   <!ELEMENT Bookstore (Book | Magazine)*>
+   <!ELEMENT Book (Title, Authors, Remark?)>
+   <!ATTLIST Book ISBN CDATA #REQUIRED
+                  Price CDATA #REQUIRED
+                  Edition CDATA #IMPLIED>
+   <!ELEMENT Magazine (Title)>
+   <!ATTLIST Magazine Month CDATA #REQUIRED Year CDATA #REQUIRED>
+   <!ELEMENT Title (#PCDATA)>
+   <!ELEMENT Authors (Author+)>
+   <!ELEMENT Remark (#PCDATA)>
+   <!ELEMENT Author (First_Name, Last_Name)>
+   <!ELEMENT First_Name (#PCDATA)>
+   <!ELEMENT Last_Name (#PCDATA)>
+]>
+
+<Bookstore>
+   <Book ISBN="ISBN-0-13-713526-2" Price="85" Edition="3rd">
+      <Title>A First Course in Database Systems</Title>
+      <Authors>
+         <Author>
+            <First_Name>Jeffrey</First_Name>
+            <Last_Name>Ullman</Last_Name>
+         </Author>
+         <Author>
+            <First_Name>Jennifer</First_Name>
+            <Last_Name>Widom</Last_Name>
+         </Author>
+      </Authors>
+   </Book>
+   <Book ISBN="ISBN-0-13-815504-6" Price="100">
+      <Title>Database Systems: The Complete Book</Title>
+      <Authors>
+         <Author>
+            <First_Name>Hector</First_Name>
+            <Last_Name>Garcia-Molina</Last_Name>
+         </Author>
+         <Author>
+            <First_Name>Jeffrey</First_Name>
+            <Last_Name>Ullman</Last_Name>
+         </Author>
+         <Author>
+            <First_Name>Jennifer</First_Name>
+            <Last_Name>Widom</Last_Name>
+         </Author>
+      </Authors>
+      <Remark>
+         Buy this book bundled with "A First Course" - a great deal!
+      </Remark>
+   </Book>
+</Bookstore>

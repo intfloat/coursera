@@ -1,0 +1,70 @@
+<?xml version="1.0" ?>
+<!-- XSD for Bookstore-XSD.xml -->
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <xsd:element name="Bookstore">
+      <xsd:complexType>
+         <xsd:sequence>
+            <xsd:element name="Book" type="BookType"
+                         minOccurs="0" maxOccurs="unbounded" />
+            <xsd:element name="Author" type="AuthorType"
+                         minOccurs="0" maxOccurs="unbounded" />
+         </xsd:sequence>
+      </xsd:complexType>
+      <xsd:key name="BookKey">
+         <xsd:selector xpath="Book" />
+         <xsd:field xpath="@ISBN" />
+      </xsd:key>
+      <xsd:key name="AuthorKey">
+         <xsd:selector xpath="Author" />
+         <xsd:field xpath="@Ident" />
+      </xsd:key>
+      <xsd:keyref name="AuthorKeyRef" refer="AuthorKey">
+         <xsd:selector xpath="Book/Authors/Auth" />
+         <xsd:field xpath="@authIdent" />
+      </xsd:keyref>
+      <xsd:keyref name="BookKeyRef" refer="BookKey">
+         <xsd:selector xpath="Book/Remark/BookRef" />
+         <xsd:field xpath="@book" />
+      </xsd:keyref>
+   </xsd:element>
+   <xsd:complexType name="BookType">
+      <xsd:sequence>
+         <xsd:element name="Title" type="xsd:string" />
+         <xsd:element name="Authors">
+            <xsd:complexType>
+               <xsd:sequence>
+                  <xsd:element name="Auth" maxOccurs="unbounded">
+                     <xsd:complexType>
+                        <xsd:attribute name="authIdent" type="xsd:string"
+                                       use="required" />
+                     </xsd:complexType>
+                  </xsd:element>
+               </xsd:sequence>
+            </xsd:complexType>
+         </xsd:element>
+         <xsd:element name="Remark" minOccurs="0">
+            <xsd:complexType mixed="true">
+               <xsd:sequence>
+                  <xsd:element name="BookRef" minOccurs="0"
+                               maxOccurs="unbounded">
+                     <xsd:complexType>
+                        <xsd:attribute name="book" type="xsd:string"
+                                       use="required" />
+                     </xsd:complexType>
+                  </xsd:element>
+               </xsd:sequence>
+            </xsd:complexType>
+         </xsd:element>
+      </xsd:sequence>
+      <xsd:attribute name="ISBN" type="xsd:string" use="required" />
+      <xsd:attribute name="Price" type="xsd:integer" use="required" />
+   </xsd:complexType>
+   <xsd:complexType name="AuthorType">
+      <xsd:sequence>
+         <xsd:element name="First_Name" type="xsd:string" />
+         <xsd:element name="Last_Name" type="xsd:string" />
+      </xsd:sequence>
+      <xsd:attribute name="Ident" type="xsd:string" use="required" />
+   </xsd:complexType>
+</xsd:schema>

@@ -1,0 +1,32 @@
+<!ELEMENT countries (country)*>
+<!ELEMENT country (city*, language*)>
+<!ATTLIST country name CDATA #REQUIRED
+                  population CDATA #REQUIRED
+                  area CDATA #REQUIRED>
+<!ELEMENT language (#PCDATA)>
+<!ATTLIST language percentage CDATA #REQUIRED>
+<!ELEMENT city (name, population)>    
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT population (#PCDATA)>
+
+
+
+<!ELEMENT Course_Catalog (Department)*>
+<!ELEMENT Department (Title, Chair, Course+)>
+<!ATTLIST Department Code CDATA #REQUIRED>
+<!ELEMENT Title (#PCDATA)>
+<!ELEMENT Chair (Professor)>
+<!ELEMENT Course (Title, Description?, Instructors, Prerequisites?)>
+<!ATTLIST Course Number CDATA #REQUIRED
+                 Enrollment CDATA #IMPLIED>
+<!ELEMENT Description (#PCDATA)>
+<!ELEMENT Instructors ANY>
+<!ELEMENT Prerequisites (Prereq*)>
+<!ELEMENT Prereq (#PCDATA)>
+<!ELEMENT Lecturer (First_Name, Middle_Initial?, Last_Name)>
+<!ELEMENT Professor (First_Name, Middle_Initial?, Last_Name)>
+<!ELEMENT First_Name (#PCDATA)>
+<!ELEMENT Middle_Initial (#PCDATA)>
+<!ELEMENT Last_Name (#PCDATA)>
+
+
