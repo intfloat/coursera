@@ -1,0 +1,399 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="ivy-report.xsl"?>
+<ivy-report version="1.0">
+	<info
+		organisation="progfun-example"
+		module="progfun-example_2.10"
+		revision="1.0.0"
+		conf="test"
+		confs="compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, sources, docs, pom"
+		date="20140430195102"/>
+	<dependencies>
+		<module organisation="com.typesafe.akka" name="akka-testkit_2.10">
+			<revision name="2.2.3" status="release" pubdate="20131023163705" resolver="public" artresolver="public" homepage="http://akka.io" downloaded="true" searched="true" default="false" conf="default(compile), default, compile, runtime, master" position="25">
+				<license name="Apache 2" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
+				<metadata-artifact status="successful" details="" size="2331" time="1012" location="/Users/air/.ivy2/cache/com.typesafe.akka/akka-testkit_2.10/ivy-2.2.3.xml" searched="true" original-local-location="/Users/air/.ivy2/cache/com.typesafe.akka/akka-testkit_2.10/ivy-2.2.3.xml.original" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/com/typesafe/akka/akka-testkit_2.10/2.2.3/akka-testkit_2.10-2.2.3.pom"/>
+				<caller organisation="progfun-example" name="progfun-example_2.10" conf="test, compile, runtime" rev="2.2.3" rev-constraint-default="2.2.3" rev-constraint-dynamic="2.2.3" callerrev="1.0.0"/>
+				<artifacts>
+					<artifact name="akka-testkit_2.10" type="bundle" ext="jar" status="successful" details="" size="238520" time="2544" location="/Users/air/.ivy2/cache/com.typesafe.akka/akka-testkit_2.10/bundles/akka-testkit_2.10-2.2.3.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/com/typesafe/akka/akka-testkit_2.10/2.2.3/akka-testkit_2.10-2.2.3.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.scalatest" name="scalatest_2.10">
+			<revision name="1.9.1" status="release" pubdate="20121223025935" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.scalatest.org" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, runtime, master" position="26">
+				<license name="the Apache License, ASL Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0"/>
+				<metadata-artifact status="no" details="" size="4873" time="0" location="/Users/air/.ivy2/cache/org.scalatest/scalatest_2.10/ivy-1.9.1.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/scalatest/scalatest_2.10/1.9.1/scalatest_2.10-1.9.1.pom"/>
+				<caller organisation="progfun-example" name="progfun-example_2.10" conf="test, compile, runtime" rev="1.9.1" rev-constraint-default="1.9.1" rev-constraint-dynamic="1.9.1" callerrev="1.0.0"/>
+				<artifacts>
+					<artifact name="scalatest_2.10" type="jar" ext="jar" status="no" details="" size="3114958" time="0" location="/Users/air/.ivy2/cache/org.scalatest/scalatest_2.10/jars/scalatest_2.10-1.9.1.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/scalatest/scalatest_2.10/1.9.1/scalatest_2.10-1.9.1.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="com.typesafe.akka" name="akka-actor_2.10">
+			<revision name="2.2.3" status="release" pubdate="20131023163548" resolver="public" artresolver="public" homepage="http://akka.io" downloaded="true" searched="true" default="false" conf="default(compile), default, compile, master(*), compile(*), runtime, runtime(*), master" position="23">
+				<license name="Apache 2" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
+				<metadata-artifact status="successful" details="" size="1908" time="956" location="/Users/air/.ivy2/cache/com.typesafe.akka/akka-actor_2.10/ivy-2.2.3.xml" searched="true" original-local-location="/Users/air/.ivy2/cache/com.typesafe.akka/akka-actor_2.10/ivy-2.2.3.xml.original" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/com/typesafe/akka/akka-actor_2.10/2.2.3/akka-actor_2.10-2.2.3.pom"/>
+				<caller organisation="com.typesafe.akka" name="akka-testkit_2.10" conf="default, compile, runtime, master" rev="2.2.3" rev-constraint-default="2.2.3" rev-constraint-dynamic="2.2.3" callerrev="2.2.3"/>
+				<caller organisation="progfun-example" name="progfun-example_2.10" conf="test, compile, runtime" rev="2.2.3" rev-constraint-default="2.2.3" rev-constraint-dynamic="2.2.3" callerrev="1.0.0"/>
+				<artifacts>
+					<artifact name="akka-actor_2.10" type="jar" ext="jar" status="successful" details="" size="2669443" time="2960" location="/Users/air/.ivy2/cache/com.typesafe.akka/akka-actor_2.10/jars/akka-actor_2.10-2.2.3.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/com/typesafe/akka/akka-actor_2.10/2.2.3/akka-actor_2.10-2.2.3.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="com.typesafe" name="config">
+			<revision name="1.0.2" status="release" pubdate="20130703210814" resolver="public" artresolver="public" homepage="https://github.com/typesafehub/config" downloaded="true" searched="true" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="24">
+				<license name="Apache License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0"/>
+				<metadata-artifact status="successful" details="" size="1856" time="990" location="/Users/air/.ivy2/cache/com.typesafe/config/ivy-1.0.2.xml" searched="true" original-local-location="/Users/air/.ivy2/cache/com.typesafe/config/ivy-1.0.2.xml.original" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/com/typesafe/config/1.0.2/config-1.0.2.pom"/>
+				<caller organisation="com.typesafe.akka" name="akka-actor_2.10" conf="default, compile, runtime, master" rev="1.0.2" rev-constraint-default="1.0.2" rev-constraint-dynamic="1.0.2" callerrev="2.2.3"/>
+				<artifacts>
+					<artifact name="config" type="bundle" ext="jar" status="successful" details="" size="187497" time="1131" location="/Users/air/.ivy2/cache/com.typesafe/config/bundles/config-1.0.2.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/com/typesafe/config/1.0.2/config-1.0.2.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.scala-lang.modules" name="scala-async_2.10">
+			<revision name="0.9.0-M2" status="release" pubdate="20131107233440" resolver="public" artresolver="public" homepage="http://github.com/scala/async" downloaded="true" searched="true" default="false" conf="default(compile), default, compile, runtime, master" position="22">
+				<license name="Scala license" url="https://github.com/scala/async/blob/master/LICENSE"/>
+				<metadata-artifact status="successful" details="" size="2634" time="965" location="/Users/air/.ivy2/cache/org.scala-lang.modules/scala-async_2.10/ivy-0.9.0-M2.xml" searched="true" original-local-location="/Users/air/.ivy2/cache/org.scala-lang.modules/scala-async_2.10/ivy-0.9.0-M2.xml.original" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/scala-lang/modules/scala-async_2.10/0.9.0-M2/scala-async_2.10-0.9.0-M2.pom"/>
+				<caller organisation="progfun-example" name="progfun-example_2.10" conf="test, compile, runtime" rev="0.9.0-M2" rev-constraint-default="0.9.0-M2" rev-constraint-dynamic="0.9.0-M2" callerrev="1.0.0"/>
+				<artifacts>
+					<artifact name="scala-async_2.10" type="bundle" ext="jar" status="successful" details="" size="418314" time="1358" location="/Users/air/.ivy2/cache/org.scala-lang.modules/scala-async_2.10/bundles/scala-async_2.10-0.9.0-M2.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/scala-lang/modules/scala-async_2.10/0.9.0-M2/scala-async_2.10-0.9.0-M2.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="com.squareup.retrofit" name="retrofit">
+			<revision name="1.0.0" status="release" pubdate="20130513235704" resolver="public" artresolver="public" homepage="" downloaded="true" searched="true" default="false" conf="default(compile), default, compile, runtime, master" position="20">
+				<metadata-artifact status="successful" details="" size="1544" time="1242" location="/Users/air/.ivy2/cache/com.squareup.retrofit/retrofit/ivy-1.0.0.xml" searched="true" original-local-location="/Users/air/.ivy2/cache/com.squareup.retrofit/retrofit/ivy-1.0.0.xml.original" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/com/squareup/retrofit/retrofit/1.0.0/retrofit-1.0.0.pom"/>
+				<caller organisation="progfun-example" name="progfun-example_2.10" conf="test, compile, runtime" rev="1.0.0" rev-constraint-default="1.0.0" rev-constraint-dynamic="1.0.0" callerrev="1.0.0"/>
+				<artifacts>
+					<artifact name="retrofit" type="jar" ext="jar" status="successful" details="" size="79120" time="974" location="/Users/air/.ivy2/cache/com.squareup.retrofit/retrofit/jars/retrofit-1.0.0.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/com/squareup/retrofit/retrofit/1.0.0/retrofit-1.0.0.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="com.google.code.gson" name="gson">
+			<revision name="2.2.3" status="release" pubdate="20130413053729" resolver="public" artresolver="public" homepage="http://code.google.com/p/google-gson/" downloaded="true" searched="true" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="21">
+				<license name="The Apache Software License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
+				<metadata-artifact status="successful" details="" size="8053" time="947" location="/Users/air/.ivy2/cache/com.google.code.gson/gson/ivy-2.2.3.xml" searched="true" original-local-location="/Users/air/.ivy2/cache/com.google.code.gson/gson/ivy-2.2.3.xml.original" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/com/google/code/gson/gson/2.2.3/gson-2.2.3.pom"/>
+				<caller organisation="com.squareup.retrofit" name="retrofit" conf="default, compile, runtime, master" rev="2.2.3" rev-constraint-default="2.2.3" rev-constraint-dynamic="2.2.3" callerrev="1.0.0"/>
+				<artifacts>
+					<artifact name="gson" type="jar" ext="jar" status="successful" details="" size="193968" time="1146" location="/Users/air/.ivy2/cache/com.google.code.gson/gson/jars/gson-2.2.3.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/com/google/code/gson/gson/2.2.3/gson-2.2.3.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.slf4j" name="slf4j-simple">
+			<revision name="1.7.5" status="release" pubdate="20130326045226" resolver="public" artresolver="public" homepage="http://www.slf4j.org" downloaded="true" searched="true" default="false" conf="default(compile), default, compile, runtime, master" position="19">
+				<metadata-artifact status="successful" details="" size="1472" time="933" location="/Users/air/.ivy2/cache/org.slf4j/slf4j-simple/ivy-1.7.5.xml" searched="true" original-local-location="/Users/air/.ivy2/cache/org.slf4j/slf4j-simple/ivy-1.7.5.xml.original" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/slf4j/slf4j-simple/1.7.5/slf4j-simple-1.7.5.pom"/>
+				<caller organisation="progfun-example" name="progfun-example_2.10" conf="test, compile, runtime" rev="1.7.5" rev-constraint-default="1.7.5" rev-constraint-dynamic="1.7.5" callerrev="1.0.0"/>
+				<artifacts>
+					<artifact name="slf4j-simple" type="jar" ext="jar" status="successful" details="" size="10680" time="1901" location="/Users/air/.ivy2/cache/org.slf4j/slf4j-simple/jars/slf4j-simple-1.7.5.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/slf4j/slf4j-simple/1.7.5/slf4j-simple-1.7.5.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.slf4j" name="slf4j-api">
+			<revision name="1.7.5" status="release" pubdate="20130326045215" resolver="public" artresolver="public" homepage="http://www.slf4j.org" downloaded="true" searched="true" default="false" conf="default(compile), default, compile, master(*), compile(*), runtime, runtime(*), master" position="18">
+				<metadata-artifact status="successful" details="" size="2689" time="878" location="/Users/air/.ivy2/cache/org.slf4j/slf4j-api/ivy-1.7.5.xml" searched="true" original-local-location="/Users/air/.ivy2/cache/org.slf4j/slf4j-api/ivy-1.7.5.xml.original" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/slf4j/slf4j-api/1.7.5/slf4j-api-1.7.5.pom"/>
+				<caller organisation="progfun-example" name="progfun-example_2.10" conf="test, compile, runtime" rev="1.7.5" rev-constraint-default="1.7.5" rev-constraint-dynamic="1.7.5" callerrev="1.0.0"/>
+				<caller organisation="org.slf4j" name="slf4j-simple" conf="default, compile, runtime, master" rev="1.7.5" rev-constraint-default="1.7.5" rev-constraint-dynamic="1.7.5" callerrev="1.7.5"/>
+				<caller organisation="com.ning" name="async-http-client" conf="compile, runtime" rev="1.6.2" rev-constraint-default="1.6.2" rev-constraint-dynamic="1.6.2" callerrev="1.7.16"/>
+				<artifacts>
+					<artifact name="slf4j-api" type="jar" ext="jar" status="successful" details="" size="26084" time="993" location="/Users/air/.ivy2/cache/org.slf4j/slf4j-api/jars/slf4j-api-1.7.5.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/slf4j/slf4j-api/1.7.5/slf4j-api-1.7.5.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+			<revision name="1.6.2" evicted="latest-revision" evicted-reason="" downloaded="false" searched="false" conf="compile, master(*), runtime, compile(*), runtime(*), master, default(compile)" position="-1">
+				<evicted-by rev="1.7.5"/>
+				<caller organisation="progfun-example" name="progfun-example_2.10" conf="test, compile, runtime" rev="1.7.5" rev-constraint-default="1.7.5" rev-constraint-dynamic="1.7.5" callerrev="1.0.0"/>
+				<caller organisation="com.ning" name="async-http-client" conf="compile, runtime" rev="1.6.2" rev-constraint-default="1.6.2" rev-constraint-dynamic="1.6.2" callerrev="1.7.16"/>
+				<artifacts>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="net.databinder.dispatch" name="dispatch-core_2.10">
+			<revision name="0.11.0" status="release" pubdate="20130724104351" resolver="public" artresolver="public" homepage="http://dispatch.databinder.net/" downloaded="true" searched="true" default="false" conf="default(compile), default, compile, runtime, master" position="15">
+				<license name="LGPL v3" url="http://www.gnu.org/licenses/lgpl.txt"/>
+				<metadata-artifact status="successful" details="" size="1900" time="886" location="/Users/air/.ivy2/cache/net.databinder.dispatch/dispatch-core_2.10/ivy-0.11.0.xml" searched="true" original-local-location="/Users/air/.ivy2/cache/net.databinder.dispatch/dispatch-core_2.10/ivy-0.11.0.xml.original" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/net/databinder/dispatch/dispatch-core_2.10/0.11.0/dispatch-core_2.10-0.11.0.pom"/>
+				<caller organisation="progfun-example" name="progfun-example_2.10" conf="test, compile, runtime" rev="0.11.0" rev-constraint-default="0.11.0" rev-constraint-dynamic="0.11.0" callerrev="1.0.0"/>
+				<artifacts>
+					<artifact name="dispatch-core_2.10" type="jar" ext="jar" status="successful" details="" size="250506" time="1130" location="/Users/air/.ivy2/cache/net.databinder.dispatch/dispatch-core_2.10/jars/dispatch-core_2.10-0.11.0.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/net/databinder/dispatch/dispatch-core_2.10/0.11.0/dispatch-core_2.10-0.11.0.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="com.ning" name="async-http-client">
+			<revision name="1.7.16" status="release" pubdate="20130521024045" resolver="public" artresolver="public" homepage="http://github.com/AsyncHttpClient/async-http-client" downloaded="true" searched="true" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="16">
+				<license name="Apache License 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.html"/>
+				<metadata-artifact status="successful" details="" size="26952" time="985" location="/Users/air/.ivy2/cache/com.ning/async-http-client/ivy-1.7.16.xml" searched="true" original-local-location="/Users/air/.ivy2/cache/com.ning/async-http-client/ivy-1.7.16.xml.original" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/com/ning/async-http-client/1.7.16/async-http-client-1.7.16.pom"/>
+				<caller organisation="net.databinder.dispatch" name="dispatch-core_2.10" conf="default, compile, runtime, master" rev="1.7.16" rev-constraint-default="1.7.16" rev-constraint-dynamic="1.7.16" callerrev="0.11.0"/>
+				<artifacts>
+					<artifact name="async-http-client" type="jar" ext="jar" status="successful" details="" size="496797" time="1616" location="/Users/air/.ivy2/cache/com.ning/async-http-client/jars/async-http-client-1.7.16.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/com/ning/async-http-client/1.7.16/async-http-client-1.7.16.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="io.netty" name="netty">
+			<revision name="3.6.3.Final" status="release" pubdate="20130221215442" resolver="public" artresolver="public" homepage="http://netty.io/" downloaded="true" searched="true" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="17">
+				<license name="Apache License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0"/>
+				<metadata-artifact status="successful" details="" size="26204" time="902" location="/Users/air/.ivy2/cache/io.netty/netty/ivy-3.6.3.Final.xml" searched="true" original-local-location="/Users/air/.ivy2/cache/io.netty/netty/ivy-3.6.3.Final.xml.original" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/io/netty/netty/3.6.3.Final/netty-3.6.3.Final.pom"/>
+				<caller organisation="com.ning" name="async-http-client" conf="compile, runtime" rev="3.6.3.Final" rev-constraint-default="3.6.3.Final" rev-constraint-dynamic="3.6.3.Final" callerrev="1.7.16"/>
+				<artifacts>
+					<artifact name="netty" type="bundle" ext="jar" status="successful" details="" size="1202373" time="2662" location="/Users/air/.ivy2/cache/io.netty/netty/bundles/netty-3.6.3.Final.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/io/netty/netty/3.6.3.Final/netty-3.6.3.Final.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="junit" name="junit">
+			<revision name="4.10" status="release" pubdate="20110930031223" resolver="public" artresolver="public" homepage="http://junit.org" downloaded="true" searched="true" default="false" conf="default(compile), default, compile, runtime, master" position="27">
+				<license name="Common Public License Version 1.0" url="http://www.opensource.org/licenses/cpl1.0.txt"/>
+				<metadata-artifact status="successful" details="" size="2345" time="919" location="/Users/air/.ivy2/cache/junit/junit/ivy-4.10.xml" searched="true" original-local-location="/Users/air/.ivy2/cache/junit/junit/ivy-4.10.xml.original" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/junit/junit/4.10/junit-4.10.pom"/>
+				<caller organisation="progfun-example" name="progfun-example_2.10" conf="test, compile, runtime" rev="4.10" rev-constraint-default="4.10" rev-constraint-dynamic="4.10" callerrev="1.0.0"/>
+				<artifacts>
+					<artifact name="junit" type="jar" ext="jar" status="successful" details="" size="253160" time="1117" location="/Users/air/.ivy2/cache/junit/junit/jars/junit-4.10.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/junit/junit/4.10/junit-4.10.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.hamcrest" name="hamcrest-core">
+			<revision name="1.1" status="release" pubdate="20070719031143" resolver="public" artresolver="public" homepage="" downloaded="true" searched="true" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="28">
+				<metadata-artifact status="successful" details="" size="481" time="1041" location="/Users/air/.ivy2/cache/org.hamcrest/hamcrest-core/ivy-1.1.xml" searched="true" original-local-location="/Users/air/.ivy2/cache/org.hamcrest/hamcrest-core/ivy-1.1.xml.original" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/hamcrest/hamcrest-core/1.1/hamcrest-core-1.1.pom"/>
+				<caller organisation="junit" name="junit" conf="default, compile, runtime, master" rev="1.1" rev-constraint-default="1.1" rev-constraint-dynamic="1.1" callerrev="4.10"/>
+				<artifacts>
+					<artifact name="hamcrest-core" type="jar" ext="jar" status="successful" details="" size="76643" time="925" location="/Users/air/.ivy2/cache/org.hamcrest/hamcrest-core/jars/hamcrest-core-1.1.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/hamcrest/hamcrest-core/1.1/hamcrest-core-1.1.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.scala-lang" name="scala-swing">
+			<revision name="2.10.3" status="release" pubdate="20130927174605" resolver="public" artresolver="public" homepage="http://www.scala-lang.org/" downloaded="true" searched="true" default="false" conf="default(compile), default, compile, runtime, master" position="14">
+				<license name="BSD-like" url="http://www.scala-lang.org/downloads/license.html
+         "/>
+				<metadata-artifact status="successful" details="" size="1938" time="909" location="/Users/air/.ivy2/cache/org.scala-lang/scala-swing/ivy-2.10.3.xml" searched="true" original-local-location="/Users/air/.ivy2/cache/org.scala-lang/scala-swing/ivy-2.10.3.xml.original" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/scala-lang/scala-swing/2.10.3/scala-swing-2.10.3.pom"/>
+				<caller organisation="progfun-example" name="progfun-example_2.10" conf="test, compile, runtime" rev="2.10.3" rev-constraint-default="2.10.3" rev-constraint-dynamic="2.10.3" callerrev="1.0.0"/>
+				<artifacts>
+					<artifact name="scala-swing" type="jar" ext="jar" status="successful" details="" size="707643" time="1644" location="/Users/air/.ivy2/cache/org.scala-lang/scala-swing/jars/scala-swing-2.10.3.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/scala-lang/scala-swing/2.10.3/scala-swing-2.10.3.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.scala-lang" name="scala-reflect">
+			<revision name="2.10.3" status="release" pubdate="20130927174529" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.scala-lang.org/" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, master(*), compile(*), runtime, runtime(*), master" position="13">
+				<license name="BSD-like" url="http://www.scala-lang.org/downloads/license.html    "/>
+				<metadata-artifact status="no" details="" size="2647" time="0" location="/Users/air/.ivy2/cache/org.scala-lang/scala-reflect/ivy-2.10.3.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/scala-lang/scala-reflect/2.10.3/scala-reflect-2.10.3.pom"/>
+				<caller organisation="org.scala-lang" name="scala-compiler" conf="compile, runtime" rev="2.10.2" rev-constraint-default="2.10.2" rev-constraint-dynamic="2.10.2" callerrev="2.10.2"/>
+				<caller organisation="org.scala-lang.modules" name="scala-async_2.10" conf="default, compile, runtime, master" rev="2.10.3" rev-constraint-default="2.10.3" rev-constraint-dynamic="2.10.3" callerrev="0.9.0-M2"/>
+				<caller organisation="progfun-example" name="progfun-example_2.10" conf="test, compile, runtime" rev="2.10.3" rev-constraint-default="2.10.3" rev-constraint-dynamic="2.10.3" callerrev="1.0.0"/>
+				<caller organisation="org.scalatest" name="scalatest_2.10" conf="default, compile, runtime, master" rev="2.10.0" rev-constraint-default="2.10.0" rev-constraint-dynamic="2.10.0" callerrev="1.9.1"/>
+				<artifacts>
+					<artifact name="scala-reflect" type="jar" ext="jar" status="no" details="" size="3206936" time="0" location="/Users/air/.ivy2/cache/org.scala-lang/scala-reflect/jars/scala-reflect-2.10.3.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/scala-lang/scala-reflect/2.10.3/scala-reflect-2.10.3.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+			<revision name="2.10.0" evicted="latest-revision" evicted-reason="" downloaded="false" searched="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="-1">
+				<evicted-by rev="2.10.3"/>
+				<caller organisation="org.scalatest" name="scalatest_2.10" conf="default, compile, runtime, master" rev="2.10.0" rev-constraint-default="2.10.0" rev-constraint-dynamic="2.10.0" callerrev="1.9.1"/>
+				<artifacts>
+				</artifacts>
+			</revision>
+			<revision name="2.10.2" evicted="latest-revision" evicted-reason="" downloaded="false" searched="false" conf="compile, master(*), runtime, compile(*), runtime(*), master, default(compile)" position="-1">
+				<evicted-by rev="2.10.3"/>
+				<caller organisation="org.scala-lang" name="scala-compiler" conf="compile, runtime" rev="2.10.2" rev-constraint-default="2.10.2" rev-constraint-dynamic="2.10.2" callerrev="2.10.2"/>
+				<caller organisation="progfun-example" name="progfun-example_2.10" conf="test, compile, runtime" rev="2.10.3" rev-constraint-default="2.10.3" rev-constraint-dynamic="2.10.3" callerrev="1.0.0"/>
+				<artifacts>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.scala-lang" name="scala-compiler">
+			<revision name="2.10.2" status="release" pubdate="20130607020625" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.scala-lang.org/" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="12">
+				<license name="BSD-like" url="http://www.scala-lang.org/downloads/license.html    "/>
+				<metadata-artifact status="no" details="" size="2809" time="0" location="/Users/air/.ivy2/cache/org.scala-lang/scala-compiler/ivy-2.10.2.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/scala-lang/scala-compiler/2.10.2/scala-compiler-2.10.2.pom"/>
+				<caller organisation="org.scala-lang" name="scalap" conf="compile, runtime" rev="2.10.2" rev-constraint-default="2.10.2" rev-constraint-dynamic="2.10.0" callerrev="2.10.0"/>
+				<artifacts>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.json4s" name="json4s-native_2.10">
+			<revision name="3.2.5" status="release" pubdate="20130731124356" resolver="public" artresolver="public" homepage="https://github.com/json4s/json4s" downloaded="true" searched="true" default="false" conf="default(compile), default, compile, runtime, master" position="6">
+				<license name="ASL" url="http://github.com/json4s/json4s/raw/HEAD/LICENSE"/>
+				<metadata-artifact status="successful" details="" size="2197" time="917" location="/Users/air/.ivy2/cache/org.json4s/json4s-native_2.10/ivy-3.2.5.xml" searched="true" original-local-location="/Users/air/.ivy2/cache/org.json4s/json4s-native_2.10/ivy-3.2.5.xml.original" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/json4s/json4s-native_2.10/3.2.5/json4s-native_2.10-3.2.5.pom"/>
+				<caller organisation="progfun-example" name="progfun-example_2.10" conf="test, compile, runtime" rev="3.2.5" rev-constraint-default="3.2.5" rev-constraint-dynamic="3.2.5" callerrev="1.0.0"/>
+				<artifacts>
+					<artifact name="json4s-native_2.10" type="jar" ext="jar" status="successful" details="" size="68735" time="987" location="/Users/air/.ivy2/cache/org.json4s/json4s-native_2.10/jars/json4s-native_2.10-3.2.5.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/json4s/json4s-native_2.10/3.2.5/json4s-native_2.10-3.2.5.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.json4s" name="json4s-core_2.10">
+			<revision name="3.2.5" status="release" pubdate="20130731124414" resolver="public" artresolver="public" homepage="https://github.com/json4s/json4s" downloaded="true" searched="true" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="7">
+				<license name="ASL" url="http://github.com/json4s/json4s/raw/HEAD/LICENSE"/>
+				<metadata-artifact status="successful" details="" size="2546" time="952" location="/Users/air/.ivy2/cache/org.json4s/json4s-core_2.10/ivy-3.2.5.xml" searched="true" original-local-location="/Users/air/.ivy2/cache/org.json4s/json4s-core_2.10/ivy-3.2.5.xml.original" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/json4s/json4s-core_2.10/3.2.5/json4s-core_2.10-3.2.5.pom"/>
+				<caller organisation="org.json4s" name="json4s-native_2.10" conf="default, compile, runtime, master" rev="3.2.5" rev-constraint-default="3.2.5" rev-constraint-dynamic="3.2.5" callerrev="3.2.5"/>
+				<artifacts>
+					<artifact name="json4s-core_2.10" type="jar" ext="jar" status="successful" details="" size="579417" time="1389" location="/Users/air/.ivy2/cache/org.json4s/json4s-core_2.10/jars/json4s-core_2.10-3.2.5.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/json4s/json4s-core_2.10/3.2.5/json4s-core_2.10-3.2.5.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.scala-lang" name="scalap">
+			<revision name="2.10.0" status="release" pubdate="20121220153017" resolver="public" artresolver="public" homepage="http://www.scala-lang.org/" downloaded="true" searched="true" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="11">
+				<license name="BSD-like" url="http://www.scala-lang.org/downloads/license.html
+			"/>
+				<metadata-artifact status="successful" details="" size="1805" time="884" location="/Users/air/.ivy2/cache/org.scala-lang/scalap/ivy-2.10.0.xml" searched="true" original-local-location="/Users/air/.ivy2/cache/org.scala-lang/scalap/ivy-2.10.0.xml.original" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/scala-lang/scalap/2.10.0/scalap-2.10.0.pom"/>
+				<caller organisation="org.json4s" name="json4s-core_2.10" conf="compile, runtime" rev="2.10.0" rev-constraint-default="2.10.0" rev-constraint-dynamic="2.10.0" callerrev="3.2.5"/>
+				<artifacts>
+					<artifact name="scalap" type="jar" ext="jar" status="successful" details="" size="855012" time="2093" location="/Users/air/.ivy2/cache/org.scala-lang/scalap/jars/scalap-2.10.0.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/scala-lang/scalap/2.10.0/scalap-2.10.0.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="com.thoughtworks.paranamer" name="paranamer">
+			<revision name="2.5.6" status="release" pubdate="20130729005925" resolver="public" artresolver="public" homepage="" downloaded="true" searched="true" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="9">
+				<metadata-artifact status="successful" details="" size="4762" time="915" location="/Users/air/.ivy2/cache/com.thoughtworks.paranamer/paranamer/ivy-2.5.6.xml" searched="true" original-local-location="/Users/air/.ivy2/cache/com.thoughtworks.paranamer/paranamer/ivy-2.5.6.xml.original" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/com/thoughtworks/paranamer/paranamer/2.5.6/paranamer-2.5.6.pom"/>
+				<caller organisation="org.json4s" name="json4s-core_2.10" conf="compile, runtime" rev="2.5.6" rev-constraint-default="2.5.6" rev-constraint-dynamic="2.5.6" callerrev="3.2.5"/>
+				<artifacts>
+					<artifact name="paranamer" type="jar" ext="jar" status="successful" details="" size="31627" time="1051" location="/Users/air/.ivy2/cache/com.thoughtworks.paranamer/paranamer/jars/paranamer-2.5.6.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/com/thoughtworks/paranamer/paranamer/2.5.6/paranamer-2.5.6.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.mockito" name="mockito-all">
+			<revision name="1.9.0" status="release" pubdate="20111220092459" resolver="public" artresolver="public" homepage="http://www.mockito.org" downloaded="true" searched="true" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="10">
+				<license name="The MIT License" url="http://code.google.com/p/mockito/wiki/License"/>
+				<metadata-artifact status="successful" details="" size="1010" time="1003" location="/Users/air/.ivy2/cache/org.mockito/mockito-all/ivy-1.9.0.xml" searched="true" original-local-location="/Users/air/.ivy2/cache/org.mockito/mockito-all/ivy-1.9.0.xml.original" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/mockito/mockito-all/1.9.0/mockito-all-1.9.0.pom"/>
+				<caller organisation="com.thoughtworks.paranamer" name="paranamer" conf="compile, runtime" rev="1.9.0" rev-constraint-default="1.9.0" rev-constraint-dynamic="1.9.0" callerrev="2.5.6"/>
+				<artifacts>
+					<artifact name="mockito-all" type="jar" ext="jar" status="successful" details="" size="1495219" time="3198" location="/Users/air/.ivy2/cache/org.mockito/mockito-all/jars/mockito-all-1.9.0.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/mockito/mockito-all/1.9.0/mockito-all-1.9.0.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.json4s" name="json4s-ast_2.10">
+			<revision name="3.2.5" status="release" pubdate="20130731124354" resolver="public" artresolver="public" homepage="https://github.com/json4s/json4s" downloaded="true" searched="true" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="8">
+				<license name="ASL" url="http://github.com/json4s/json4s/raw/HEAD/LICENSE"/>
+				<metadata-artifact status="successful" details="" size="2012" time="1115" location="/Users/air/.ivy2/cache/org.json4s/json4s-ast_2.10/ivy-3.2.5.xml" searched="true" original-local-location="/Users/air/.ivy2/cache/org.json4s/json4s-ast_2.10/ivy-3.2.5.xml.original" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/json4s/json4s-ast_2.10/3.2.5/json4s-ast_2.10-3.2.5.pom"/>
+				<caller organisation="org.json4s" name="json4s-core_2.10" conf="compile, runtime" rev="3.2.5" rev-constraint-default="3.2.5" rev-constraint-dynamic="3.2.5" callerrev="3.2.5"/>
+				<artifacts>
+					<artifact name="json4s-ast_2.10" type="jar" ext="jar" status="successful" details="" size="86179" time="1170" location="/Users/air/.ivy2/cache/org.json4s/json4s-ast_2.10/jars/json4s-ast_2.10-3.2.5.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/json4s/json4s-ast_2.10/3.2.5/json4s-ast_2.10-3.2.5.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="com.netflix.rxjava" name="rxjava-scala">
+			<revision name="0.15.0" status="release" pubdate="20131120093020" resolver="public" artresolver="public" homepage="https://github.com/Netflix/RxJava" downloaded="true" searched="true" default="false" conf="default(compile), default, compile, runtime, master" position="4">
+				<license name="The Apache Software License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
+				<metadata-artifact status="successful" details="" size="1704" time="951" location="/Users/air/.ivy2/cache/com.netflix.rxjava/rxjava-scala/ivy-0.15.0.xml" searched="true" original-local-location="/Users/air/.ivy2/cache/com.netflix.rxjava/rxjava-scala/ivy-0.15.0.xml.original" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/com/netflix/rxjava/rxjava-scala/0.15.0/rxjava-scala-0.15.0.pom"/>
+				<caller organisation="progfun-example" name="progfun-example_2.10" conf="test, compile, runtime" rev="0.15.0" rev-constraint-default="0.15.0" rev-constraint-dynamic="0.15.0" callerrev="1.0.0"/>
+				<artifacts>
+					<artifact name="rxjava-scala" type="jar" ext="jar" status="successful" details="" size="172963" time="1135" location="/Users/air/.ivy2/cache/com.netflix.rxjava/rxjava-scala/jars/rxjava-scala-0.15.0.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/com/netflix/rxjava/rxjava-scala/0.15.0/rxjava-scala-0.15.0.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="com.netflix.rxjava" name="rxjava-core">
+			<revision name="0.15.0" status="release" pubdate="20131120093006" resolver="public" artresolver="public" homepage="https://github.com/Netflix/RxJava" downloaded="true" searched="true" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="5">
+				<license name="The Apache Software License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
+				<metadata-artifact status="successful" details="" size="1302" time="881" location="/Users/air/.ivy2/cache/com.netflix.rxjava/rxjava-core/ivy-0.15.0.xml" searched="true" original-local-location="/Users/air/.ivy2/cache/com.netflix.rxjava/rxjava-core/ivy-0.15.0.xml.original" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/com/netflix/rxjava/rxjava-core/0.15.0/rxjava-core-0.15.0.pom"/>
+				<caller organisation="com.netflix.rxjava" name="rxjava-scala" conf="default, compile, runtime, master" rev="0.15.0" rev-constraint-default="0.15.0" rev-constraint-dynamic="0.15.0" callerrev="0.15.0"/>
+				<artifacts>
+					<artifact name="rxjava-core" type="jar" ext="jar" status="successful" details="" size="444183" time="1330" location="/Users/air/.ivy2/cache/com.netflix.rxjava/rxjava-core/jars/rxjava-core-0.15.0.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/com/netflix/rxjava/rxjava-core/0.15.0/rxjava-core-0.15.0.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.scalacheck" name="scalacheck_2.10">
+			<revision name="1.10.1" status="release" pubdate="20130407212757" resolver="public" artresolver="public" homepage="http://www.scalacheck.org" downloaded="true" searched="true" default="false" conf="default(compile), default, compile, runtime, master" position="1">
+				<license name="BSD-style" url="http://www.opensource.org/licenses/bsd-license.php"/>
+				<metadata-artifact status="successful" details="" size="1828" time="1004" location="/Users/air/.ivy2/cache/org.scalacheck/scalacheck_2.10/ivy-1.10.1.xml" searched="true" original-local-location="/Users/air/.ivy2/cache/org.scalacheck/scalacheck_2.10/ivy-1.10.1.xml.original" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/scalacheck/scalacheck_2.10/1.10.1/scalacheck_2.10-1.10.1.pom"/>
+				<caller organisation="progfun-example" name="progfun-example_2.10" conf="test, compile, runtime" rev="1.10.1" rev-constraint-default="1.10.1" rev-constraint-dynamic="1.10.1" callerrev="1.0.0"/>
+				<artifacts>
+					<artifact name="scalacheck_2.10" type="jar" ext="jar" status="successful" details="" size="842817" time="1942" location="/Users/air/.ivy2/cache/org.scalacheck/scalacheck_2.10/jars/scalacheck_2.10-1.10.1.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/scalacheck/scalacheck_2.10/1.10.1/scalacheck_2.10-1.10.1.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.scala-lang" name="scala-actors">
+			<revision name="2.10.1" status="release" pubdate="20130313070904" resolver="public" artresolver="public" homepage="http://www.scala-lang.org/" downloaded="true" searched="true" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="3">
+				<license name="BSD-like" url="http://www.scala-lang.org/downloads/license.html
+         "/>
+				<metadata-artifact status="successful" details="" size="1856" time="921" location="/Users/air/.ivy2/cache/org.scala-lang/scala-actors/ivy-2.10.1.xml" searched="true" original-local-location="/Users/air/.ivy2/cache/org.scala-lang/scala-actors/ivy-2.10.1.xml.original" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/scala-lang/scala-actors/2.10.1/scala-actors-2.10.1.pom"/>
+				<caller organisation="org.scalacheck" name="scalacheck_2.10" conf="default, compile, runtime, master" rev="2.10.1" rev-constraint-default="2.10.1" rev-constraint-dynamic="2.10.1" callerrev="1.10.1"/>
+				<caller organisation="org.scalatest" name="scalatest_2.10" conf="default, compile, runtime, master" rev="2.10.0" rev-constraint-default="2.10.0" rev-constraint-dynamic="2.10.0" callerrev="1.9.1"/>
+				<artifacts>
+					<artifact name="scala-actors" type="jar" ext="jar" status="successful" details="" size="450110" time="1324" location="/Users/air/.ivy2/cache/org.scala-lang/scala-actors/jars/scala-actors-2.10.1.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/scala-lang/scala-actors/2.10.1/scala-actors-2.10.1.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+			<revision name="2.10.0" evicted="latest-revision" evicted-reason="" downloaded="false" searched="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="-1">
+				<evicted-by rev="2.10.1"/>
+				<caller organisation="org.scalatest" name="scalatest_2.10" conf="default, compile, runtime, master" rev="2.10.0" rev-constraint-default="2.10.0" rev-constraint-dynamic="2.10.0" callerrev="1.9.1"/>
+				<artifacts>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.scala-tools.testing" name="test-interface">
+			<revision name="0.5" status="release" pubdate="20100328073658" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="2">
+				<metadata-artifact status="no" details="" size="2210" time="0" location="/Users/air/.ivy2/cache/org.scala-tools.testing/test-interface/ivy-0.5.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/scala-tools/testing/test-interface/0.5/test-interface-0.5.pom"/>
+				<caller organisation="org.scalacheck" name="scalacheck_2.10" conf="default, compile, runtime, master" rev="0.5" rev-constraint-default="0.5" rev-constraint-dynamic="0.5" callerrev="1.10.1"/>
+				<artifacts>
+					<artifact name="test-interface" type="jar" ext="jar" status="no" details="" size="4407" time="0" location="/Users/air/.ivy2/cache/org.scala-tools.testing/test-interface/jars/test-interface-0.5.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/scala-tools/testing/test-interface/0.5/test-interface-0.5.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.scala-lang" name="scala-library">
+			<revision name="2.10.2" status="release" pubdate="20130607020543" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.scala-lang.org/" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, master(*), compile(*), runtime, runtime(*), master" position="0">
+				<license name="BSD-like" url="http://www.scala-lang.org/downloads/license.html          "/>
+				<metadata-artifact status="no" details="" size="2487" time="0" location="/Users/air/.ivy2/cache/org.scala-lang/scala-library/ivy-2.10.2.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/scala-lang/scala-library/2.10.2/scala-library-2.10.2.pom"/>
+				<caller organisation="org.scala-lang" name="scala-reflect" conf="compile, runtime" rev="2.10.2" rev-constraint-default="2.10.2" rev-constraint-dynamic="2.10.3" callerrev="2.10.3"/>
+				<caller organisation="org.json4s" name="json4s-ast_2.10" conf="compile, runtime" rev="2.10.2" rev-constraint-default="2.10.2" rev-constraint-dynamic="2.10.0" callerrev="3.2.5"/>
+				<caller organisation="org.scala-lang" name="scala-swing" conf="default, compile, runtime, master" rev="2.10.2" rev-constraint-default="2.10.2" rev-constraint-dynamic="2.10.3" callerrev="2.10.3"/>
+				<caller organisation="com.typesafe.akka" name="akka-actor_2.10" conf="default, compile, runtime, master" rev="2.10.2" rev-constraint-default="2.10.2" rev-constraint-dynamic="2.10.2" callerrev="2.2.3"/>
+				<caller organisation="org.json4s" name="json4s-native_2.10" conf="default, compile, runtime, master" rev="2.10.2" rev-constraint-default="2.10.2" rev-constraint-dynamic="2.10.0" callerrev="3.2.5"/>
+				<caller organisation="org.scala-lang" name="scala-actors" conf="compile, runtime" rev="2.10.2" rev-constraint-default="2.10.2" rev-constraint-dynamic="2.10.1" callerrev="2.10.1"/>
+				<caller organisation="com.netflix.rxjava" name="rxjava-scala" conf="default, compile, runtime, master" rev="2.10.2" rev-constraint-default="2.10.2" rev-constraint-dynamic="2.10.+" callerrev="0.15.0"/>
+				<caller organisation="org.scala-lang" name="scala-compiler" conf="compile, runtime" rev="2.10.2" rev-constraint-default="2.10.2" rev-constraint-dynamic="2.10.2" callerrev="2.10.2"/>
+				<caller organisation="com.typesafe.akka" name="akka-testkit_2.10" conf="default, compile, runtime, master" rev="2.10.2" rev-constraint-default="2.10.2" rev-constraint-dynamic="2.10.2" callerrev="2.2.3"/>
+				<caller organisation="org.scalacheck" name="scalacheck_2.10" conf="default, compile, runtime, master" rev="2.10.2" rev-constraint-default="2.10.2" rev-constraint-dynamic="2.10.1" callerrev="1.10.1"/>
+				<caller organisation="net.databinder.dispatch" name="dispatch-core_2.10" conf="default, compile, runtime, master" rev="2.10.2" rev-constraint-default="2.10.2" rev-constraint-dynamic="2.10.1" callerrev="0.11.0"/>
+				<caller organisation="org.scala-lang.modules" name="scala-async_2.10" conf="default, compile, runtime, master" rev="2.10.2" rev-constraint-default="2.10.2" rev-constraint-dynamic="2.10.3" callerrev="0.9.0-M2"/>
+				<caller organisation="org.json4s" name="json4s-core_2.10" conf="compile, runtime" rev="2.10.2" rev-constraint-default="2.10.2" rev-constraint-dynamic="2.10.0" callerrev="3.2.5"/>
+				<caller organisation="progfun-example" name="progfun-example_2.10" conf="test, compile, runtime" rev="2.10.2" rev-constraint-default="2.10.2" rev-constraint-dynamic="2.10.2" callerrev="1.0.0"/>
+				<caller organisation="org.scalatest" name="scalatest_2.10" conf="default, compile, runtime, master" rev="2.10.2" rev-constraint-default="2.10.2" rev-constraint-dynamic="2.10.0" callerrev="1.9.1"/>
+				<artifacts>
+				</artifacts>
+			</revision>
+		</module>
+	</dependencies>
+</ivy-report>

@@ -1,0 +1,8 @@
+[0m[[0mdebug[0m] [0mRunning Test recfun.CountChangeSuite : subclass(false, org.scalatest.Suite) with arguments [0m
+[0m[[0mdebug[0m] [0mRunning Test recfun.PascalSuite : subclass(false, org.scalatest.Suite) with arguments [0m
+[0m[[0mdebug[0m] [0mRunning Test recfun.BalanceSuite : subclass(false, org.scalatest.Suite) with arguments [0m
+[0m[[0minfo[0m] [0mPassed: : Total 11, Failed 0, Errors 0, Passed 11, Skipped 0[0m
+[0m[[0mdebug[0m] [0mPassed tests:[0m
+[0m[[0mdebug[0m] [0m	recfun.BalanceSuite[0m
+[0m[[0mdebug[0m] [0m	recfun.PascalSuite[0m
+[0m[[0mdebug[0m] [0m	recfun.CountChangeSuite[0m
