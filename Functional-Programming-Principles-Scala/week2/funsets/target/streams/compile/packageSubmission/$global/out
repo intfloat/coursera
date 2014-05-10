@@ -1,0 +1,9 @@
+[0m[[0minfo[0m] [0mPackaging /Users/air/github/coursera/Functional-Programming-Principles-Scala/week2/funsets/target/scala-2.10/progfun-funsets_2.10-1.0.0.jar ...[0m
+[0m[[0mdebug[0m] [0mInput file mappings:[0m
+[0m[[0mdebug[0m] [0m	common/package.scala[0m
+[0m[[0mdebug[0m] [0m	  /Users/air/github/coursera/Functional-Programming-Principles-Scala/week2/funsets/src/main/scala/common/package.scala[0m
+[0m[[0mdebug[0m] [0m	funsets/FunSets.scala[0m
+[0m[[0mdebug[0m] [0m	  /Users/air/github/coursera/Functional-Programming-Principles-Scala/week2/funsets/src/main/scala/funsets/FunSets.scala[0m
+[0m[[0mdebug[0m] [0m	funsets/Main.scala[0m
+[0m[[0mdebug[0m] [0m	  /Users/air/github/coursera/Functional-Programming-Principles-Scala/week2/funsets/src/main/scala/funsets/Main.scala[0m
+[0m[[0minfo[0m] [0mDone packaging.[0m

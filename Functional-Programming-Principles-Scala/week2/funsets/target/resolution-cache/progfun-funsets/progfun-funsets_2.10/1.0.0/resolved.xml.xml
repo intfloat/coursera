@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ivy-module version="2.0" xmlns:e="http://ant.apache.org/ivy/extra">
+	<info organisation="progfun-funsets"
+		module="progfun-funsets_2.10"
+		revision="1.0.0"
+		status="integration"
+		publication="20140510204928"
+	>
+		<description>
+		progfun-funsets
+		</description>
+	</info>
+	<configurations>
+		<conf name="compile" visibility="public" description=""/>
+		<conf name="runtime" visibility="public" description="" extends="compile"/>
+		<conf name="test" visibility="public" description="" extends="runtime"/>
+		<conf name="provided" visibility="public" description=""/>
+		<conf name="optional" visibility="public" description=""/>
+		<conf name="compile-internal" visibility="private" description="" extends="compile,optional,provided"/>
+		<conf name="runtime-internal" visibility="private" description="" extends="runtime,optional"/>
+		<conf name="test-internal" visibility="private" description="" extends="test,optional,provided"/>
+		<conf name="plugin" visibility="private" description=""/>
+		<conf name="sources" visibility="public" description=""/>
+		<conf name="docs" visibility="public" description=""/>
+		<conf name="pom" visibility="public" description=""/>
+	</configurations>
+	<publications>
+		<artifact name="progfun-funsets_2.10" type="pom" ext="pom" conf="pom"/>
+		<artifact name="progfun-funsets_2.10" type="jar" ext="jar" conf="compile"/>
+		<artifact name="progfun-funsets_2.10" type="src" ext="jar" conf="sources" e:classifier="sources"/>
+		<artifact name="progfun-funsets_2.10" type="doc" ext="jar" conf="docs" e:classifier="javadoc"/>
+	</publications>
+	<dependencies>
+		<dependency org="org.scala-lang" name="scala-library" rev="2.10.2" conf="compile->default(compile)"/>
+		<dependency org="org.scalatest" name="scalatest_2.10" rev="1.9.1" conf="test->default(compile)"/>
+		<dependency org="junit" name="junit" rev="4.10" conf="test->default(compile)"/>
+		<dependency org="org.scalacheck" name="scalacheck_2.10" rev="1.10.1" conf="compile->default(compile)"/>
+		<dependency org="com.netflix.rxjava" name="rxjava-scala" rev="0.15.0" conf="compile->default(compile)"/>
+		<dependency org="org.json4s" name="json4s-native_2.10" rev="3.2.5" conf="compile->default(compile)"/>
+		<dependency org="org.scala-lang" name="scala-swing" rev="2.10.3" conf="compile->default(compile)"/>
+		<dependency org="net.databinder.dispatch" name="dispatch-core_2.10" rev="0.11.0" conf="compile->default(compile)"/>
+		<dependency org="org.scala-lang" name="scala-reflect" rev="2.10.3" conf="compile->default(compile)"/>
+		<dependency org="org.slf4j" name="slf4j-api" rev="1.7.5" conf="compile->default(compile)"/>
+		<dependency org="org.slf4j" name="slf4j-simple" rev="1.7.5" conf="compile->default(compile)"/>
+		<dependency org="com.squareup.retrofit" name="retrofit" rev="1.0.0" conf="compile->default(compile)"/>
+		<dependency org="org.scala-lang.modules" name="scala-async_2.10" rev="0.9.0-M2" conf="compile->default(compile)"/>
+		<dependency org="com.typesafe.akka" name="akka-actor_2.10" rev="2.2.3" conf="compile->default(compile)"/>
+		<dependency org="com.typesafe.akka" name="akka-testkit_2.10" rev="2.2.3" conf="compile->default(compile)"/>
+		<exclude org="org.scala-lang" module="scala-library" artifact="*" type="jar" ext="*" matcher="exact"/>
+		<exclude org="org.scala-lang" module="scala-compiler" artifact="*" type="jar" ext="*" matcher="exact"/>
+		<override org="org.scala-lang" module="scala-library" matcher="exact" rev="2.10.2"/>
+		<override org="org.scala-lang" module="scala-compiler" matcher="exact" rev="2.10.2"/>
+	</dependencies>
+</ivy-module>
