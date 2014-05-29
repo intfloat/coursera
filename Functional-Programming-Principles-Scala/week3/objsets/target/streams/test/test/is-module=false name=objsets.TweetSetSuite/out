@@ -1,0 +1,8 @@
+[0m[[0minfo[0m] [0m[32mTweetSetSuite:[0m[0m
+[0m[[0minfo[0m] [0m[32m- filter: on empty set[0m[0m
+[0m[[0minfo[0m] [0m[32m- filter: a on set5[0m[0m
+[0m[[0minfo[0m] [0m[32m- filter: 20 on set5[0m[0m
+[0m[[0minfo[0m] [0m[32m- union: set4c and set4d[0m[0m
+[0m[[0minfo[0m] [0m[32m- union: with empty set (1)[0m[0m
+[0m[[0minfo[0m] [0m[32m- union: with empty set (2)[0m[0m
+[0m[[0minfo[0m] [0m[32m- descending: set5[0m[0m
