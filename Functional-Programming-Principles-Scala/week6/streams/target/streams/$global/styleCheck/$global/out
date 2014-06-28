@@ -1,0 +1,10 @@
+[0m[[0minfo[0m] [0mChecking file /Users/air/github/coursera/Functional-Programming-Principles-Scala/week6/streams/src/main/scala/common/package.scala... OK![0m
+[0m[[0minfo[0m] [0mChecking file /Users/air/github/coursera/Functional-Programming-Principles-Scala/week6/streams/src/main/scala/streams/Bloxorz.scala... OK![0m
+[0m[[0minfo[0m] [0mChecking file /Users/air/github/coursera/Functional-Programming-Principles-Scala/week6/streams/src/main/scala/streams/GameDef.scala... OK![0m
+[0m[[0minfo[0m] [0mChecking file /Users/air/github/coursera/Functional-Programming-Principles-Scala/week6/streams/src/main/scala/streams/InfiniteTerrain.scala... OK![0m
+[0m[[0minfo[0m] [0mChecking file /Users/air/github/coursera/Functional-Programming-Principles-Scala/week6/streams/src/main/scala/streams/Solver.scala... OK![0m
+[0m[[0minfo[0m] [0mChecking file /Users/air/github/coursera/Functional-Programming-Principles-Scala/week6/streams/src/main/scala/streams/StringParserTerrain.scala... OK![0m
+[0m[[0minfo[0m] [0mProcessed 6 file(s)[0m
+[0m[[0minfo[0m] [0mFound 0 errors[0m
+[0m[[0minfo[0m] [0mFound 0 warnings[0m
+[0m[[0minfo[0m] [0mStyle Score: 100 out of 100[0m
