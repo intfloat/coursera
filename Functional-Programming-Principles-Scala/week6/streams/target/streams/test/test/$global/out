@@ -1,0 +1,4 @@
+[0m[[0mdebug[0m] [0mRunning Test streams.BloxorzSuite : subclass(false, org.scalatest.Suite) with arguments [0m
+[0m[[0minfo[0m] [0mPassed: : Total 4, Failed 0, Errors 0, Passed 4, Skipped 0[0m
+[0m[[0mdebug[0m] [0mPassed tests:[0m
+[0m[[0mdebug[0m] [0m	streams.BloxorzSuite[0m
