@@ -49,6 +49,15 @@ def union(s1,t1,s2,t2):
 
     #Please fill in the program here
 
+    # new start state
+    st[0] = incCapacity()
+    addEdge(st[0], epssymbol, s1)
+    addEdge(st[0], epssymbol, s2)
+
+    # new end state
+    st[1] = incCapacity()
+    addEdge(t1, epssymbol, st[1])
+    addEdge(t2, epssymbol, st[1])
   
     return st
 
@@ -57,6 +66,9 @@ def union(s1,t1,s2,t2):
 def concat(s1,t1,s2,t2):
     st=[0]*2
     #Please fill in the program here
+    addEdge(t1, epssymbol, s2)
+    st[0] = s1
+    st[1] = t2
 
     return st
 
@@ -65,6 +77,14 @@ def concat(s1,t1,s2,t2):
 def clo(s,t):
     st=[0]*2
     #Please fill in the program here
+    st[0] = incCapacity()
+    addEdge(st[0], epssymbol, s)
+
+    st[1] = incCapacity()
+    addEdge(t, epssymbol, st[1])
+
+    addEdge(t, epssymbol, s)
+    addEdge(st[0], epssymbol, st[1])
 
     return st
     
