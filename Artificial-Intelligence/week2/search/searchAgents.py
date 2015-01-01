@@ -4,7 +4,7 @@
 # educational purposes provided that (1) you do not distribute or publish
 # solutions, (2) you retain this notice, and (3) you provide clear
 # attribution to UC Berkeley, including a link to http://ai.berkeley.edu.
-# 
+#
 # Attribution Information: The Pacman AI projects were developed at UC Berkeley.
 # The core projects and autograders were primarily created by John DeNero
 # (denero@cs.berkeley.edu) and Dan Klein (klein@cs.berkeley.edu).
@@ -40,6 +40,7 @@ from game import Actions
 import util
 import time
 import search
+import itertools
 
 class GoWestAgent(Agent):
     "An agent that goes West until it can't."
@@ -288,6 +289,7 @@ class CornersProblem(search.SearchProblem):
         # Please add any code here which you would like to use
         # in initializing the problem
         "*** YOUR CODE HERE ***"
+        self.visited = (False, False, False, False)
 
     def getStartState(self):
         """
@@ -295,14 +297,19 @@ class CornersProblem(search.SearchProblem):
         space)
         """
         "*** YOUR CODE HERE ***"
-        util.raiseNotDefined()
+        return self.startingPosition + self.visited
+        # util.raiseNotDefined()
 
     def isGoalState(self, state):
         """
         Returns whether this search state is a goal state of the problem.
         """
         "*** YOUR CODE HERE ***"
-        util.raiseNotDefined()
+        for status in state[2:]:
+            if status == False:
+                return False
+        return True
+        # util.raiseNotDefined()
 
     def getSuccessors(self, state):
         """
@@ -319,13 +326,22 @@ class CornersProblem(search.SearchProblem):
         for action in [Directions.NORTH, Directions.SOUTH, Directions.EAST, Directions.WEST]:
             # Add a successor state to the successor list if the action is legal
             # Here's a code snippet for figuring out whether a new position hits a wall:
-            #   x,y = currentPosition
-            #   dx, dy = Actions.directionToVector(action)
-            #   nextx, nexty = int(x + dx), int(y + dy)
-            #   hitsWall = self.walls[nextx][nexty]
+            x, y = state[0], state[1]
+            dx, dy = Actions.directionToVector(action)
+            nextx, nexty = int(x + dx), int(y + dy)
+            hitsWall = self.walls[nextx][nexty]
 
             "*** YOUR CODE HERE ***"
-
+            if not hitsWall:
+                pos, flag = (nextx, nexty), False
+                for i in xrange(len(self.corners)):
+                    if pos == self.corners[i]:
+                        next_state = pos + state[2:i+2] + (True, ) + state[i + 3:]
+                        successors.append((next_state, action, 1))
+                        flag = True
+                        break
+                if not flag:
+                    successors.append((pos + state[2:], action, 1))
         self._expanded += 1 # DO NOT CHANGE
         return successors
 
@@ -360,7 +376,19 @@ def cornersHeuristic(state, problem):
     walls = problem.walls # These are the walls of the maze, as a Grid (game.py)
 
     "*** YOUR CODE HERE ***"
-    return 0 # Default to trivial solution
+    res, arr = 1e10, []
+    for corner, status  in zip(corners, state[2:]):
+        if not status:
+            arr.append(corner)
+    if len(arr) == 0: return 0
+    prev = state[0:2]
+    for perm in itertools.permutations(arr):
+        cur, prev = 0, state[0:2]
+        for pos in perm:
+            cur += abs(pos[0] - prev[0]) + abs(pos[1] - prev[1])
+            prev = pos
+        res = min(res, cur)
+    return res # Default to trivial solution
 
 class AStarCornersAgent(SearchAgent):
     "A SearchAgent for FoodSearchProblem using A* and your foodHeuristic"
@@ -454,7 +482,40 @@ def foodHeuristic(state, problem):
     """
     position, foodGrid = state
     "*** YOUR CODE HERE ***"
-    return 0
+    arr, foods = [], foodGrid.asList()
+    if len(foods) == 0: return 0
+    dis = 1e10
+    # s = set()
+    # s.add(position)
+    # q = util.Queue()
+    # q.push(position + (0, ))
+    # while not q.isEmpty():
+    #     tp = q.pop()
+    #     # print tp, state
+    #     for suc, action, cost in problem.getSuccessors((tp[:2], foodGrid)):
+    #         suc = suc[0]
+    #         if suc[:2] in s: continue
+    #         if problem.walls[suc[0]][suc[1]]: continue
+    #         q.push(suc[:2] + (tp[2] + 1, ))
+    #         s.add(suc[:2])
+    #         if foodGrid[suc[0]][suc[1]]:
+    #             return abs(position[0] - suc[0]) + abs(position[1] - suc[1])
+
+    for food in foods:
+        dis = min(abs(position[0] - food[0]) + abs(position[1] - food[1]), dis)
+        # arr.append((dis, ) + food)
+    return dis
+    # arr = sorted(arr)
+    # # print arr
+    # if len(arr) > 1: arr = arr[-1:]
+    # res = 1e10
+    # for perm in itertools.permutations(arr):
+    #     prev, cur = position, 0
+    #     for pos in perm:
+    #         cur += abs(prev[0] - pos[0]) + abs(prev[1] - pos[1])
+    #         prev = pos
+    #     res = min(res, cur)
+    # return res
 
 class ClosestDotSearchAgent(SearchAgent):
     "Search for all food using a sequence of searches"
@@ -485,6 +546,25 @@ class ClosestDotSearchAgent(SearchAgent):
         problem = AnyFoodSearchProblem(gameState)
 
         "*** YOUR CODE HERE ***"
+        if food[startPosition[0]][startPosition[1]]:
+            return []
+
+        mp, q = {}, util.Queue()
+        q.push(startPosition)
+        mp[startPosition] = None
+        while not q.isEmpty():
+            tp = q.pop()
+            # print 'state:', tp
+            for suc, action, cst in problem.getSuccessors(tp):
+                if suc not in mp and not walls[suc[0]][suc[1]]:
+                    mp[suc] = (tp, action)
+                    q.push(suc)
+                    if food[suc[0]][suc[1]]:
+                        cur, res = suc, []
+                        while mp[cur]:
+                            res.append(mp[cur][1])
+                            cur = mp[cur][0]
+                        return res[::-1]
         util.raiseNotDefined()
 
 class AnyFoodSearchProblem(PositionSearchProblem):
