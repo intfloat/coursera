@@ -483,8 +483,35 @@ def foodHeuristic(state, problem):
     position, foodGrid = state
     "*** YOUR CODE HERE ***"
     arr, foods = [], foodGrid.asList()
-    if len(foods) == 0: return 0
-    dis = 1e10
+    if len(foods) == 0 or foodGrid[position[0]][position[1]]: return 0
+
+    # Use Minimum Spanning Tree to solve this problem
+    visited = [False] * len(foods)
+    # pnt = [-1] * len(foods)
+    dis, res = [], 0
+    for i, food in enumerate(foods):
+        dis.append(abs(food[0] - position[0]) + abs(food[1] - position[1]))
+
+    for _ in xrange(len(foods)):
+        mn, index = 1e10, -1
+        for i, food in enumerate(foods):
+            if visited[i]: continue
+            if dis[i] < mn:
+                mn, index = dis[i], i
+        assert(index >= 0)
+        res += mn
+        visited[index] = True
+        for i, d in enumerate(dis):
+            tmp = abs(foods[i][0] - foods[index][0]) + abs(foods[i][1] - foods[index][1])
+            if not visited[i] and d > tmp:
+                dis[i] = tmp
+                # pnt[i] = index
+    # for i, food in enumerate(foods):
+        # if pnt[i] == -1:
+            # res += abs(food[0] - position[0]) + abs(food[1] - position[1])
+        # else:
+            # res += abs(food[0] - foods[pnt[i]][0]) + abs(food[1] - foods[pnt[i]][1])
+    return res
     # s = set()
     # s.add(position)
     # q = util.Queue()
@@ -501,10 +528,10 @@ def foodHeuristic(state, problem):
     #         if foodGrid[suc[0]][suc[1]]:
     #             return abs(position[0] - suc[0]) + abs(position[1] - suc[1])
 
-    for food in foods:
-        dis = min(abs(position[0] - food[0]) + abs(position[1] - food[1]), dis)
+    # for food in foods:
+        # dis = min(abs(position[0] - food[0]) + abs(position[1] - food[1]), dis)
         # arr.append((dis, ) + food)
-    return dis
+    # return dis
     # arr = sorted(arr)
     # # print arr
     # if len(arr) > 1: arr = arr[-1:]
