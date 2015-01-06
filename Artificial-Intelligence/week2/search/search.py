@@ -180,9 +180,9 @@ def aStarSearch(problem, heuristic=nullHeuristic):
         expanded.add(tp)
         for suc, act, cost in problem.getSuccessors(tp):
             total = cost + g + heuristic(suc, problem)
-            q.push((suc, g + cost, heuristic(suc, problem)))
-            # if suc not in mp:
-            if suc not in mp or mp[suc][2] >= total: mp[suc] = (tp, act, total)
+            if suc not in mp or mp[suc][2] > total: 
+                q.push((suc, g + cost, heuristic(suc, problem)))
+                mp[suc] = (tp, act, total)
     util.raiseNotDefined()
 
 
