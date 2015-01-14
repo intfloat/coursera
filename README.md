@@ -41,5 +41,7 @@ Here is a list of my finished course:
 
 <b>Pattern-Oriented Software Architecture</b>, Vanderbilt University
 
+<b>Mining Massive Datasets</b>, Stanford University
+
 <br>
 # Sincere thanks to all professors involved.
