@@ -45,6 +45,19 @@ class ValueIterationAgent(ValueEstimationAgent):
 
         # Write value iteration code here
         "*** YOUR CODE HERE ***"
+        for _ in xrange(self.iterations):
+          prev = self.values.copy()
+          for state in self.mdp.getStates():
+            if self.mdp.isTerminal(state):
+              self.values[state] = 0
+              continue
+            mxVal = -float('inf')
+            for action in self.mdp.getPossibleActions(state):
+              cur = 0
+              for st, prob in self.mdp.getTransitionStatesAndProbs(state, action):
+                cur += prob * (self.mdp.getReward(state, action, st) + self.discount * prev[st])
+              mxVal = max(mxVal, cur)
+            self.values[state] = mxVal        
 
 
     def getValue(self, state):
@@ -60,7 +73,12 @@ class ValueIterationAgent(ValueEstimationAgent):
           value function stored in self.values.
         """
         "*** YOUR CODE HERE ***"
-        util.raiseNotDefined()
+        nextPair = self.mdp.getTransitionStatesAndProbs(state, action)
+        res = 0
+        for st, prob in nextPair:          
+          res += prob * (self.values[st] * self.discount + self.mdp.getReward(state, action, st))
+        return res
+        # util.raiseNotDefined()
 
     def computeActionFromValues(self, state):
         """
@@ -72,7 +90,15 @@ class ValueIterationAgent(ValueEstimationAgent):
           terminal state, you should return None.
         """
         "*** YOUR CODE HERE ***"
-        util.raiseNotDefined()
+        acts, res, mx = self.mdp.getPossibleActions(state), None, -float('inf')
+        for action in acts:
+          cur = 0
+          for st, prob in self.mdp.getTransitionStatesAndProbs(state, action):
+            cur += prob * (self.mdp.getReward(state, action, st) + self.discount * self.values[st])
+          if cur > mx:
+            mx, res = cur, action
+        return res
+        # util.raiseNotDefined()
 
     def getPolicy(self, state):
         return self.computeActionFromValues(state)
