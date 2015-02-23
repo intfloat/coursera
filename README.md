@@ -5,43 +5,45 @@ I enjoy taking MOOCs, the experience of discussing with people from different fi
 
 Here is a list of my finished course:
 
-<b>Machine Learning</b>, Stanford University, by Andrew Ng
+[Machine Learning](https://www.coursera.org/course/ml), Stanford University, by Andrew Ng
 
-<b>Programming Languages</b>, University of Washington
+[Programming Languages](https://www.coursera.org/course/proglang), University of Washington
 
-<b>Algorithm Design and Analysis, Part 2</b>, Stanford University
+[Algorithm Design and Analysis, Part 2](https://www.coursera.org/course/algo2), Stanford University
 
-<b>Convex Optimization</b>, Stanford University
+[Convex Optimization](https://class.stanford.edu/courses/Engineering/CVX101/Winter2014/about), Stanford University
 
-<b>Introduction to Databases</b>, Stanford University
+[Introduction to Databases](https://class.stanford.edu/courses/Home/Databases/Engineering/about), Stanford University
 
-<b>Machine Learning Foundations</b>, National Taiwan University
+[Machine Learning Foundations](https://www.coursera.org/course/ntumlone), National Taiwan University
 
-<b>Cryptography I</b>, Stanford University
+[Cryptography I](https://www.coursera.org/course/crypto), Stanford University
 
-<b>Computing for Data Analysis</b>, Johns Hopkins University
+[Computing for Data Analysis](https://www.coursera.org/course/compdata), Johns Hopkins University
 
-<b>Programming for Handheld Mobile Applications</b>, University of Maryland, College Park
+[Programming Mobile Applications for Android Handheld Systems](https://www.coursera.org/course/android), University of Maryland, College Park
 
-<b>Compilers</b>, Stanford University
+[Compilers](https://www.coursera.org/course/compilers), Stanford University
 
-<b>Web Application Architectures</b>, University of New Mexico
+[Web Application Architectures](https://www.coursera.org/course/webapplications), University of New Mexico
 
-<b>Functional Programming Principles in Scala</b>, École Polytechnique Fédérale de Lausanne
+[Functional Programming Principles in Scala](https://www.coursera.org/course/progfun), École Polytechnique Fédérale de Lausanne
 
-<b>Introduction to Data Science</b>, University of Washingtong
+[Introduction to Data Science](https://www.coursera.org/course/datasci), University of Washington
 
-<b>Algorithms I</b>, Princeton University
+[Algorithms II](https://www.coursera.org/course/algs4partII), Princeton University
 
-<b>High Performance Scientific Computing</b>, University of Washington
+[High Performance Scientific Computing](https://www.coursera.org/course/scicomp), University of Washington
 
-<b>Automata</b>, Stanford University
+[Automata](https://www.coursera.org/course/automata), Stanford University
 
-<b>Introduction to Operations Management</b>, University of Pennsylvania
+[Introduction to Operations Management](https://www.coursera.org/course/operations), University of Pennsylvania
 
-<b>Pattern-Oriented Software Architecture</b>, Vanderbilt University
+[Pattern-Oriented Software Architecture](https://www.coursera.org/course/posa), Vanderbilt University
 
-<b>Mining Massive Datasets</b>, Stanford University
+[Mining Massive Datasets](https://www.coursera.org/course/mmds), Stanford University
+
+[Computer Networks](https://www.coursera.org/course/comnetworks), University of Washington
 
 <br>
 # Sincere thanks to all professors involved.
