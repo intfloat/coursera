@@ -64,6 +64,36 @@ def basicFeatureExtractorFace(datum):
                 features[(x,y)] = 0
     return features
 
+def connectedComponentFeatures(pixels, sig = 'cc', value = 0):
+    features, cc = util.Counter(), 0
+    row, col = DIGIT_DATUM_WIDTH, DIGIT_DATUM_HEIGHT
+    visited = [[False] * col for i in xrange(row)]
+    dir_x, dir_y = [0, 0, 1, -1], [1, -1, 0, 0]
+
+    # use breadth first search to determine number of connected components
+    for i in xrange(row):
+        for j in xrange(col):
+            if visited[i][j]: continue
+            if pixels[i][j] != value: continue
+            q = util.Queue()
+            q.push((i, j))
+            visited[i][j] = True
+            while not q.isEmpty():
+                x, y = q.pop()
+                for dx, dy in zip(dir_x, dir_y):
+                    nx, ny = x + dx, y + dy
+                    if nx >= row or nx < 0 or ny >= col or ny < 0 or visited[nx][ny] or pixels[nx][ny] != value:
+                        continue
+                    visited[nx][ny] = True
+                    q.push((nx, ny))
+            cc += 1  # increase number of connected components
+    cc = min(5, cc)
+    for i in xrange(6):    
+        if cc == i: features[(sig, i)] = 1
+        else: features[(sig, i)] = 0
+    # print 'Number of cc:', cc
+    return features
+
 def enhancedFeatureExtractorDigit(datum):
     """
     Your feature extraction playground.
@@ -78,10 +108,13 @@ def enhancedFeatureExtractorDigit(datum):
     features =  basicFeatureExtractorDigit(datum)
 
     "*** YOUR CODE HERE ***"
-    util.raiseNotDefined()
+    # it turns out that one extra feature is enough to get full credit...
+    features += connectedComponentFeatures(datum.getPixels())
+    # features += connectedComponentFeatures(datum.getPixels(), sig = 'gray', value = 1)
+    # features += connectedComponentFeatures(datum.getPixels(), sig = 'black', value = 2)    
+    # util.raiseNotDefined()
 
     return features
-
 
 
 def basicFeatureExtractorPacman(state):
@@ -124,7 +157,47 @@ def enhancedPacmanFeatures(state, action):
     """
     features = util.Counter()
     "*** YOUR CODE HERE ***"
-    util.raiseNotDefined()
+    successor = state.generateSuccessor(0, action)
+    # stop agent
+    if successor.getPacmanPosition() == state.getPacmanPosition():
+        features['stop'] = 1
+    else: features['stop'] = 0
+    # # food agent
+    # if successor.getNumFood() < state.getNumFood():
+        # features['eat'] = 1
+    # else: features['eat'] = 0
+    # # suicide agent
+    # if successor.getPacmanPosition() in state.getGhostPositions():
+        # features['suicide'] = 1
+    # else: features['suicide'] = 0
+    # others
+    ghostDis = [util.manhattanDistance(successor.getPacmanPosition(), p) for p in successor.getGhostPositions()]
+    foodDis = [util.manhattanDistance(successor.getPacmanPosition(), p) for p in successor.getFood()]    
+    features['ghost'] = len(successor.getGhostPositions())
+    features['cap'] = len(successor.getCapsules())
+    # features['foodMin'] = min(foodDis)
+    # features['ghostMin'] = min(ghostDis)
+    # mn, cnt = 0, 0
+    # for food in successor.getFood():
+    #     mn += util.manhattanDistance(food, successor.getPacmanPosition())
+    #     cnt += 1
+    # features['foodMin'] = mn / cnt
+    # mn, cnt = 0, 0
+    # for ghost in successor.getGhostPositions():
+    #     mn += util.manhattanDistance(ghost, successor.getPacmanPosition())
+    #     cnt += 1
+    # features['ghostMin'] = mn / cnt
+    # if successor.isWin(): features['win'] = 1
+    # else: features['win'] = 0
+    # if successor.isLose: features['lose'] = 1
+    # else: features['lose'] = 0
+    # state: ['__doc__', '__eq__', '__hash__', '__init__', '__module__', '__str__', 'data', 'deepCopy', 
+            # 'explored', 'generatePacmanSuccessor', 'generateSuccessor', 'getAndResetExplored', 'getCapsules', 
+            # 'getFood', 'getGhostPosition', 'getGhostPositions', 'getGhostState', 'getGhostStates', 'getLegalActions', 
+            # 'getLegalPacmanActions', 'getNumAgents', 'getNumFood', 'getPacmanPosition', 'getPacmanState', 'getScore', 
+            # 'getWalls', 'hasFood', 'hasWall', 'initialize', 'isLose', 'isWin']    
+    # print 'successor:', dir(successor)
+    # util.raiseNotDefined()    
     return features
 
 
@@ -176,6 +249,7 @@ def analysis(classifier, guesses, testLabels, testData, rawTestData, printImage)
     #         print "Image: "
     #         print rawTestData[i]
     #         break
+    return            
 
 
 ## =====================
