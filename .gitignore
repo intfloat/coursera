@@ -1,4 +1,10 @@
 ML-Techniques/
+*.zip
+images/
+layouts/
+pacmandata/
+test_cases/
+Artificial-Intelligence/week14/classification/VERSION
 
 #################
 ## Eclipse
