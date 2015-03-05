@@ -4,7 +4,7 @@
 # educational purposes provided that (1) you do not distribute or publish
 # solutions, (2) you retain this notice, and (3) you provide clear
 # attribution to UC Berkeley, including a link to http://ai.berkeley.edu.
-# 
+#
 # Attribution Information: The Pacman AI projects were developed at UC Berkeley.
 # The core projects and autograders were primarily created by John DeNero
 # (denero@cs.berkeley.edu) and Dan Klein (klein@cs.berkeley.edu).
@@ -267,6 +267,13 @@ class ParticleFilter(InferenceModule):
         weight with each position) is incorrect and may produce errors.
         """
         "*** YOUR CODE HERE ***"
+        total = len(self.legalPositions)
+        self.particles, self.beliefs = [], util.Counter()
+        for i in xrange(self.numParticles):
+            pos = self.legalPositions[i % total]
+            self.particles.append(pos)
+            self.beliefs[pos] += 1
+        self.beliefs.normalize()
 
     def observe(self, observation, gameState):
         """
@@ -299,7 +306,37 @@ class ParticleFilter(InferenceModule):
         emissionModel = busters.getObservationDistribution(noisyDistance)
         pacmanPosition = gameState.getPacmanPosition()
         "*** YOUR CODE HERE ***"
-        util.raiseNotDefined()
+        # the ghost has already been caught by pacman
+        if noisyDistance is None:
+            self.particles = [self.getJailPosition()] * self.numParticles
+            self.beliefs = util.Counter()
+            self.beliefs[self.getJailPosition()] = 1.0
+            return
+        self.beliefs = util.Counter()
+        for i, particle in enumerate(self.particles):
+            dis = util.manhattanDistance(particle, pacmanPosition)
+            self.beliefs[particle] += emissionModel[dis]
+
+        # weight for all particles are zero
+        if self.beliefs.totalCount() == 0:
+            self.initializeUniformly(gameState)
+            return
+        self.beliefs.normalize()
+        self.particles = self.sample_helper()
+        # self.particles = [util.sample(self.beliefs) for _ in xrange(self.numParticles)]
+
+        self.beliefs = util.Counter()
+        for particle in self.particles:
+            self.beliefs[particle] += 1
+        self.beliefs.normalize()
+        return
+        # util.raiseNotDefined()
+
+    def sample_helper(self):
+        items = sorted(self.beliefs.items())
+        distribution = [i[1] for i in items]
+        values = [i[0] for i in items]
+        return util.nSample(distribution, values, self.numParticles)
 
     def elapseTime(self, gameState):
         """
@@ -316,7 +353,20 @@ class ParticleFilter(InferenceModule):
         a belief distribution.
         """
         "*** YOUR CODE HERE ***"
-        util.raiseNotDefined()
+        res = util.Counter()
+        for pos in self.beliefs:
+            newPosDist = self.getPositionDistribution(self.setGhostPosition(gameState, pos))
+            for nPos, prob in newPosDist.items():
+                res[nPos] += self.beliefs[pos] * prob
+        self.beliefs = res
+        self.beliefs.normalize()
+        self.particles = self.sample_helper()
+        self.beliefs = util.Counter()
+        for particle in self.particles:
+            self.beliefs[particle] += 1
+        self.beliefs.normalize()
+        return
+        # util.raiseNotDefined()
 
     def getBeliefDistribution(self):
         """
@@ -326,7 +376,8 @@ class ParticleFilter(InferenceModule):
         Counter object)
         """
         "*** YOUR CODE HERE ***"
-        util.raiseNotDefined()
+        return self.beliefs
+        # util.raiseNotDefined()
 
 class MarginalInference(InferenceModule):
     """
