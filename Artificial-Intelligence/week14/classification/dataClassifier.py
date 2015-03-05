@@ -24,6 +24,7 @@ import samples
 import sys
 import util
 from pacman import GameState
+from game import Actions
 
 TEST_SET_SIZE = 100
 DIGIT_DATUM_WIDTH=28
@@ -161,43 +162,18 @@ def enhancedPacmanFeatures(state, action):
     # stop agent
     if successor.getPacmanPosition() == state.getPacmanPosition():
         features['stop'] = 1
-    else: features['stop'] = 0
-    # # food agent
-    # if successor.getNumFood() < state.getNumFood():
-        # features['eat'] = 1
-    # else: features['eat'] = 0
-    # # suicide agent
-    # if successor.getPacmanPosition() in state.getGhostPositions():
-        # features['suicide'] = 1
-    # else: features['suicide'] = 0
-    # others
-    ghostDis = [util.manhattanDistance(successor.getPacmanPosition(), p) for p in successor.getGhostPositions()]
-    foodDis = [util.manhattanDistance(successor.getPacmanPosition(), p) for p in successor.getFood()]    
-    features['ghost'] = len(successor.getGhostPositions())
-    features['cap'] = len(successor.getCapsules())
-    # features['foodMin'] = min(foodDis)
-    # features['ghostMin'] = min(ghostDis)
-    # mn, cnt = 0, 0
-    # for food in successor.getFood():
-    #     mn += util.manhattanDistance(food, successor.getPacmanPosition())
-    #     cnt += 1
-    # features['foodMin'] = mn / cnt
-    # mn, cnt = 0, 0
-    # for ghost in successor.getGhostPositions():
-    #     mn += util.manhattanDistance(ghost, successor.getPacmanPosition())
-    #     cnt += 1
-    # features['ghostMin'] = mn / cnt
-    # if successor.isWin(): features['win'] = 1
-    # else: features['win'] = 0
-    # if successor.isLose: features['lose'] = 1
-    # else: features['lose'] = 0
-    # state: ['__doc__', '__eq__', '__hash__', '__init__', '__module__', '__str__', 'data', 'deepCopy', 
-            # 'explored', 'generatePacmanSuccessor', 'generateSuccessor', 'getAndResetExplored', 'getCapsules', 
-            # 'getFood', 'getGhostPosition', 'getGhostPositions', 'getGhostState', 'getGhostStates', 'getLegalActions', 
-            # 'getLegalPacmanActions', 'getNumAgents', 'getNumFood', 'getPacmanPosition', 'getPacmanState', 'getScore', 
-            # 'getWalls', 'hasFood', 'hasWall', 'initialize', 'isLose', 'isWin']    
-    # print 'successor:', dir(successor)
-    # util.raiseNotDefined()    
+    else: features['stop'] = 0    
+    ghostDis = min([util.manhattanDistance(successor.getPacmanPosition(), p) for p in state.getGhostPositions()])
+    prevDis = min([util.manhattanDistance(state.getPacmanPosition(), p) for p in state.getGhostPositions()])
+    foodDis = [util.manhattanDistance(successor.getPacmanPosition(), p) for p in state.getFood().asList()]    
+    # features['ghost'] = len(state.getGhostPositions())
+    # features['cap'] = len(successor.getCapsules())
+    features['score'] = successor.getScore() - state.getScore()
+    if len(foodDis) > 0: features['foodMin'] = min(foodDis)
+    else: features['foodMin'] = 0
+
+    if ghostDis < prevDis: features['ghostMin'] = 1
+    else: features['ghostMin'] = 0
     return features
 
 
