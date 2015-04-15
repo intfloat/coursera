@@ -222,3 +222,10 @@ pip-log.txt
 #Mr Developer
 .mr.developer.cfg
 .class
+
+
+*.sbt
+project/
+common/
+test/
+target/
