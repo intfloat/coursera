@@ -223,7 +223,7 @@ pip-log.txt
 .mr.developer.cfg
 .class
 
-
+web-ui/
 *.sbt
 project/
 common/
