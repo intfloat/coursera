@@ -1,7 +1,6 @@
-coursera
-========
+# coursera
 
-I enjoy taking MOOCs, the experience of discussing with people from different fields and different countries is amazing.
+I enjoy taking MOOCs, it is fun and amazing.
 
 Here is a list of my finished or ongoing courses:
 
@@ -27,6 +26,13 @@ Here is a list of my finished or ongoing courses:
 | [Pattern-Oriented Software Architecture](https://www.coursera.org/course/posa)                          | Vanderbilt University                    |
 | [Mining Massive Datasets](https://www.coursera.org/course/mmds)                                         | Stanford University                      |
 | [Computer Networks](https://www.coursera.org/course/comnetworks)                                        | University of Washington                 |
+| [Machine Learning Techniques](https://www.coursera.org/course/ntumltwo)                                 | National Taiwan University               |
+| [Pattern Discovery and Data Mining](https://www.coursera.org/course/patterndiscovery)                   | UIUC                                     |
+| [Heterogeneous Parallel Programming](https://www.coursera.org/course/hetero)                            | UIUC                                     |
+| [Image and Video Processing](https://www.coursera.org/course/images)                                    | Duke University                          |
+| [Principles of Reactive Programming](https://www.coursera.org/course/reactive)                          | École Polytechnique Fédérale de Lausanne |
+| [Introduction to Bootstrap](https://courses.edx.org/courses/course-v1:Microsoft+DEV203x+2015_T2/info)   | Microsoft                                |
+| [Artificial Intelligence](https://courses.edx.org/courses/BerkeleyX/CS188x_1/1T2013/info)               | UC Berkeley                              |
 
 <br>
-# Sincere thanks to all professors involved.
+## Sincere thanks to all professors involved.
