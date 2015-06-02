@@ -33,6 +33,7 @@ Here is a list of my finished or ongoing courses:
 | [Principles of Reactive Programming](https://www.coursera.org/course/reactive)                          | École Polytechnique Fédérale de Lausanne |
 | [Introduction to Bootstrap](https://courses.edx.org/courses/course-v1:Microsoft+DEV203x+2015_T2/info)   | Microsoft                                |
 | [Artificial Intelligence](https://courses.edx.org/courses/BerkeleyX/CS188x_1/1T2013/info)               | UC Berkeley                              |
+| [Introduction to Big Data with Apache Spark](https://www.edx.org/course/introduction-big-data-apache-spark-uc-berkeleyx-cs100-1x) | UC Berkeley    |
 
 <br>
 ## Sincere thanks to all professors involved.
