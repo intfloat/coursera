@@ -177,8 +177,28 @@ function ret = d_loss_by_d_model(model, data, wd_coefficient)
   % The returned object is supposed to be exactly like parameter <model>, i.e. it has fields ret.input_to_hid and ret.hid_to_class. However, the contents of those matrices are gradients (d loss by d model parameter), instead of model parameters.
 	 
   % This is the only function that you're expected to change. Right now, it just returns a lot of zeros, which is obviously not the correct output. Your job is to change that.
-  ret.input_to_hid = model.input_to_hid * 0;
-  ret.hid_to_class = model.hid_to_class * 0;
+  % forward propagation
+  hid_input = model.input_to_hid * data.inputs;
+  hid_output = logistic(hid_input);
+  class_input = model.hid_to_class * hid_output;
+  class_normalizer = log_sum_exp_over_rows(class_input); 
+  log_class_prob = class_input - repmat(class_normalizer, [size(class_input, 1), 1]); 
+  class_prob = exp(log_class_prob);
+
+  % backward propagation
+  N = size(data.inputs, 2); % number of training instances
+  % fprintf('Number of training instance: %d\n', N);
+  t = - 1.0 / N * (data.targets - class_prob);
+  ret.hid_to_class = t * hid_output';
+  delta = model.hid_to_class' * t .* hid_output .* (1 - hid_output);
+  ret.input_to_hid = delta * data.inputs';
+
+  % additional weight decay part
+  ret.input_to_hid = ret.input_to_hid + wd_coefficient * model.input_to_hid;
+  ret.hid_to_class = ret.hid_to_class + wd_coefficient * model.hid_to_class;
+
+  % ret.input_to_hid = model.input_to_hid * 0;
+  % ret.hid_to_class = model.hid_to_class * 0;
 end
 
 function ret = model_to_theta(model)
