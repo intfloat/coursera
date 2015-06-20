@@ -19,6 +19,7 @@ Here is a list of my finished or ongoing courses:
 | [Web Application Architectures](https://www.coursera.org/course/webapplications)                        | University of New Mexico                 |
 | [Functional Programming Principles in Scala](https://www.coursera.org/course/progfun)                   | École Polytechnique Fédérale de Lausanne |
 | [Introduction to Data Science](https://www.coursera.org/course/datasci)                                 | University of Washington                 |
+| [Algorithms I](https://www.coursera.org/course/algs4partI)                                              | Princeton University                     |
 | [Algorithms II](https://www.coursera.org/course/algs4partII)                                            | Princeton University                     |
 | [High Performance Scientific Computing](https://www.coursera.org/course/scicomp)                        | University of Washington                 |
 | [Automata](https://www.coursera.org/course/automata)                                                    | Stanford University                      |
