@@ -232,3 +232,4 @@ target/
 resources/
 *.mat
 *.txt
+*.jar
