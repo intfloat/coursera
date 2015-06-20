@@ -7,6 +7,7 @@ Here is a list of my finished or ongoing courses:
 | Course                                                                                                  | University                               |
 |---------------------------------------------------------------------------------------------------------|------------------------------------------|
 | [Machine Learning](https://www.coursera.org/course/ml)                                                  | Stanford University                      |
+| [Neural Networks for Machine Learning](https://www.coursera.org/course/neuralnets)                      | University of Toronto                    |
 | [Programming Languages](https://www.coursera.org/course/proglang)                                       | University of Washington                 |
 | [Algorithm Design and Analysis, Part 2](https://www.coursera.org/course/algo2)                          | Stanford University                      |
 | [Convex Optimization](https://class.stanford.edu/courses/Engineering/CVX101/Winter2014/about)           | Stanford University                      |
