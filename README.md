@@ -9,6 +9,7 @@ Here is a list of my finished or ongoing courses:
 | [Machine Learning](https://www.coursera.org/course/ml)                                                  | Stanford University                      |
 | [Neural Networks for Machine Learning](https://www.coursera.org/course/neuralnets)                      | University of Toronto                    |
 | [Programming Languages](https://www.coursera.org/course/proglang)                                       | University of Washington                 |
+| [Algorithm Design and Analysis, Part 1](https://www.coursera.org/course/algo)                           | Stanford University                      |
 | [Algorithm Design and Analysis, Part 2](https://www.coursera.org/course/algo2)                          | Stanford University                      |
 | [Convex Optimization](https://class.stanford.edu/courses/Engineering/CVX101/Winter2014/about)           | Stanford University                      |
 | [Introduction to Databases](https://class.stanford.edu/courses/Home/Databases/Engineering/about)        | Stanford University                      |
@@ -18,6 +19,7 @@ Here is a list of my finished or ongoing courses:
 | [Programming Mobile Applications for Android Handheld Systems](https://www.coursera.org/course/android) | University of Maryland, College Park     |
 | [Compilers](https://www.coursera.org/course/compilers)                                                  | Stanford University                      |
 | [Web Application Architectures](https://www.coursera.org/course/webapplications)                        | University of New Mexico                 |
+| [Interactive Computer Graphics with WebGL](https://www.coursera.org/course/webgl)                       | University of New Mexico                 |
 | [Functional Programming Principles in Scala](https://www.coursera.org/course/progfun)                   | École Polytechnique Fédérale de Lausanne |
 | [Introduction to Data Science](https://www.coursera.org/course/datasci)                                 | University of Washington                 |
 | [Algorithms I](https://www.coursera.org/course/algs4partI)                                              | Princeton University                     |
