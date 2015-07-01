@@ -51,7 +51,19 @@ public class RandomizedQueue<Item> implements Iterable<Item> {
             throw new java.util.NoSuchElementException();
         }
         Item res = (Item) data[head];
+        data[head] = null;
         head = (head + 1) % data.length;
+        int sz = this.size();
+        if (sz * 2 <= data.length && data.length >= 10) {
+            Object[] tmp = new Object[sz + 5];
+            int ptr = 0;
+            for (int i = head; i != tail; i = (i + 1) % data.length) {
+                tmp[ptr++] = data[i];
+            }
+            data = tmp;
+            head = 0;
+            tail = ptr;
+        }
         return res;
     }
 
@@ -83,7 +95,8 @@ class RandomizedQueueIterator<Item> implements Iterator<Item> {
     private int cur;
 
     public RandomizedQueueIterator(Object[] obj, int head, int tail) {
-        data = new Object[obj.length];
+        int sz = (tail + obj.length - head) % obj.length;
+        data = new Object[sz];
         int ptr = 0;
         for (int i = head; i != tail; i = (i + 1) % obj.length) {
             data[ptr++] = obj[i];
