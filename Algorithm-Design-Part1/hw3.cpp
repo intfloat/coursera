@@ -1,3 +1,4 @@
+// g++ hw3.cpp && time ./a.out < kargerMinCut.txt
 #include <cstdio>
 #include <string>
 #include <sstream>
@@ -5,7 +6,7 @@
 #include <cstdlib>
 #include <algorithm>
 #include <iostream>
-#define N 300
+#define N 201
 #define INF 1e9
 using namespace std;
 int map[N][N],q[N],dis[N];
@@ -21,9 +22,10 @@ inline void read() {
         stringstream ss;
         ss << s;
         ss >> a;
+        --a;
         while (ss >> b) {
             --b;
-            map[a - 1][b]+=1; map[b][a - 1]+=1;
+            map[a][b]+=1;
         }
     }
 }
@@ -58,7 +60,7 @@ inline void go() {
         ans=min(ans,mincut(i));
         contract();
     }
-    printf("%d\n",ans / 2);
+    printf("%d\n",ans);
 }
 int main() {
     n = 200;
