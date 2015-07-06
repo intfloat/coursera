@@ -233,3 +233,5 @@ resources/
 *.mat
 *.txt
 *.jar
+*.out
+*.exe
