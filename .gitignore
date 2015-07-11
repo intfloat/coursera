@@ -235,3 +235,4 @@ resources/
 *.jar
 *.out
 *.exe
+*.class
