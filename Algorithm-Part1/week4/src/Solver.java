@@ -90,8 +90,8 @@ public class Solver {
                 }
             }
         }
-        StdOut.println("Should not reach here");
-        return this.res;
+        // StdOut.println("Should not reach here");
+        return null;
     }
 
     public static void main(String[] args) {

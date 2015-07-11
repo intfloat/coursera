@@ -1,14 +1,9 @@
 import java.util.ArrayList;
 
-
 public class Board {
 
     private short[][] g;
     private short N;
-    private final short BLANK = 0;
-    private final short[] dx = {0, 0, 1, -1};
-    private final short[] dy = {1, -1, 0, 0};
-    private ArrayList<Board> neis;
 
     // construct a board from an N-by-N array of blocks
     public Board(int[][] blocks) {
@@ -27,7 +22,7 @@ public class Board {
         int ret = 0;
         for (int i = 0; i < N; ++i) {
             for (int j = 0; j < N; ++j) {
-                if (g[i][j] != BLANK) {
+                if (g[i][j] != 0) {
                     int row = (g[i][j] - 1) / N;
                     int col = (g[i][j] - 1) % N;
                     if (i != row || j != col) {
@@ -44,7 +39,7 @@ public class Board {
         int ret = 0;
         for (int i = 0; i < N; ++i) {
             for (int j = 0; j < N; ++j) {
-                if (g[i][j] != BLANK) {
+                if (g[i][j] != 0) {
                     int row = (g[i][j] - 1) / N;
                     int col = (g[i][j] - 1) % N;
                     ret += Math.abs(i - row) + Math.abs(j - col);
@@ -64,7 +59,7 @@ public class Board {
         int[][] dup = this.shortToInt(g);
         for (int i = 0; i < N; ++i) {
             for (int j = 0; j + 1 < N; ++j) {
-                if (dup[i][j] != BLANK && dup[i][j + 1] != BLANK) {
+                if (dup[i][j] != 0 && dup[i][j + 1] != 0) {
                     int tmp = dup[i][j];
                     dup[i][j] = dup[i][j + 1];
                     dup[i][j + 1] = tmp;
@@ -100,13 +95,12 @@ public class Board {
 
     // all neighboring boards
     public Iterable<Board> neighbors() {
-        if (null != this.neis) {
-            return this.neis;
-        }
-        this.neis = new ArrayList<Board>();
+        ArrayList<Board> neis = new ArrayList<Board>();
+        short[] dx = {0, 0, 1, -1};
+        short[] dy = {1, -1, 0, 0};
         for (int i = 0; i < N; ++i) {
             for (int j = 0; j < N; ++j) {
-                if (g[i][j] == BLANK) {
+                if (g[i][j] == 0) {
                     for (int k = 0; k < 4; ++k) {
                         int nx = i + dx[k];
                         int ny = j + dy[k];
@@ -115,10 +109,10 @@ public class Board {
                         }
                         int[][] tmp = this.shortToInt(g);
                         tmp[i][j] = g[nx][ny];
-                        tmp[nx][ny] = this.BLANK;
-                        this.neis.add(new Board(tmp));
+                        tmp[nx][ny] = 0;
+                        neis.add(new Board(tmp));
                     }
-                    return this.neis;
+                    return neis;
                 }
             }
         }
