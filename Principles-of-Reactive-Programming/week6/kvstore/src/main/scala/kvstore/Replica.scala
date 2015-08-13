@@ -59,7 +59,7 @@ class Replica(val arbiter: ActorRef, persistenceProps: Props) extends Actor {
   var secondaries = Map.empty[ActorRef, ActorRef]
   // the current set of replicators
   var replicators = Set.empty[ActorRef]
-  //persisting list that hasn't been acked
+  // persisting list that hasn't been acked
   var notAcked = Map.empty[Long, (ActorRef, Option[Persist], Set[ActorRef])]
   
   var expectedVersion = 0L
